@@ -330,23 +330,6 @@ ul { list-style: none; }
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Overlay background dim */
-.mobile-overlay {
-  background: rgba(0,0,0,0.85);
-}
-
-/* Mobile navigation links styling */
-.mobile-links a {
-  font-size: 1.2rem;
-  padding: 0.8rem 0;
-  display: block;
-  color: #fff;
-  text-decoration: none;
-}
-.mobile-links a:hover {
-  color: var(--clr-amber);
-}
-
 
 /* ---------- MOBILE FIXES ---------- */
 @media (max-width: 768px) {
@@ -362,7 +345,7 @@ ul { list-style: none; }
   }
   /* CEO image visible and sized */
   .ceo-img-wrap {
-    height: 250px; /* reduced height for mobile */
+    height: 250px;
     overflow: hidden;
   }
   .ceo-photo {
@@ -370,77 +353,6 @@ ul { list-style: none; }
     height: 100%;
     object-fit: cover;
   }
-  /* Hamburger overlay logo styling */
-  .mobile-header .logo {
-    max-height: 48px;
-    margin: 0 auto;
-    display: block;
-  }
-  /* Ensure hamburger icon is visible */
-  .mobile-header img {
-  max-height: 48px;
-  display: block;
-  margin: 0 auto;
-}
-.board-photo {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-}
-.mobile-overlay.open { transform: translateX(0); }
-
-.mobile-inner {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 2rem;
-  gap: 2rem;
-}
-.mobile-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.close-btn {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  color: #fff;
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  transition: var(--transition);
-}
-.close-btn:hover { background: rgba(255,255,255,0.15); }
-
-.mobile-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  flex: 1;
-}
-.mobile-nav-link {
-  font-family: var(--ff-ui);
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.85);
-  padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  transition: color var(--transition);
-}
-.mobile-nav-link:hover { color: var(--clr-amber); }
-
-.mobile-footer { display: flex; flex-direction: column; gap: 1rem; }
-.mobile-tagline {
-  font-family: var(--ff-display);
-  font-size: 0.9rem;
-  font-style: italic;
-  color: var(--clr-amber);
-  text-align: center;
 }
 
 /* ---------- HERO ---------- */
@@ -1831,9 +1743,66 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
   .section { padding: 70px 0; }
-  .nav-links { display: none; }
-.nav-links.open { display: flex; flex-direction: column; gap: 0.5rem; }
+
+
+  /* Hide nav-links by default on mobile */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(20, 30, 48, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 1.5rem 2rem;
+    gap: 0;
+    border-bottom: 2px solid var(--clr-amber);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    z-index: 999;
+  }
+
+  /* Show nav-links when hamburger is toggled */
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-links li:last-child {
+    border-bottom: none;
+    padding-top: 0.5rem;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 0.85rem 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    transition: color 0.25s ease, padding-left 0.25s ease;
+  }
+  .nav-links li a:hover {
+    color: var(--clr-amber);
+    padding-left: 0.5rem;
+  }
+
+  .nav-cta {
+    display: inline-block;
+    text-align: center;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  /* Show hamburger button */
+>>>>>>> 1bbbb29 (Refactor mobile navbar into a dropdown menu)
   .hamburger { display: flex; }
+
+  /* Make nav-inner relative for dropdown positioning */
+  .nav-inner { position: relative; }
+
   .pillars-grid { grid-template-columns: 1fr; }
   .pillar-card-wide { grid-column: span 1; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }

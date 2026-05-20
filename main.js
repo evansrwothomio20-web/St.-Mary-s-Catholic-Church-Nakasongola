@@ -2,13 +2,11 @@
   "use strict";
 
   /* ============================================================
-     1. NAVBAR — scroll state + mobile toggle
+     1. NAVBAR — scroll state + mobile hamburger toggle
   ============================================================ */
   const navbar    = document.getElementById("navbar");
   const hamburger = document.getElementById("hamburger");
   const navLinks  = document.getElementById("navLinks");
-  const mobileOverlay = document.getElementById("mobileOverlay");
-  const mobileClose = document.getElementById("mobileClose");
 
   function handleNavbarScroll() {
     if (window.scrollY > 60) {
@@ -19,15 +17,23 @@
   }
 
   window.addEventListener("scroll", handleNavbarScroll, { passive: true });
-/* Hamburger toggle */
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-  hamburger.classList.toggle("open");
-  document.body.style.overflow = navLinks.classList.contains("open") ? "hidden" : "";
-});
+  // Hamburger toggle
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      hamburger.classList.toggle("open");
+      hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    });
 
+    // Close menu when a nav link is clicked
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        hamburger.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
         document.body.style.overflow = "";
-      }
+      });
     });
   }
 

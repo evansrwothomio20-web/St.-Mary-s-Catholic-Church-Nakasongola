@@ -311,10 +311,42 @@ ul { list-style: none; }
   padding: 4px;
 }
 .hamburger span {
-  display: block; width: 24px; height: 2px;
-  background: #fff; border-radius: 2px;
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
   transition: var(--transition);
 }
+
+/* Hamburger animation when open */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Overlay background dim */
+.mobile-overlay {
+  background: rgba(0,0,0,0.85);
+}
+
+/* Mobile navigation links styling */
+.mobile-links a {
+  font-size: 1.2rem;
+  padding: 0.8rem 0;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+.mobile-links a:hover {
+  color: var(--clr-amber);
+}
+
 
 /* ---------- MOBILE FIXES ---------- */
 @media (max-width: 768px) {

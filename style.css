@@ -32,13 +32,19 @@
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-html { scroll-behavior: smooth; font-size: 16px; }
+html { 
+  scroll-behavior: smooth; 
+  font-size: 16px; 
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
 body {
   font-family: var(--ff-ui);
   background-color: var(--clr-cream);
   color: var(--clr-charcoal);
   overflow-x: hidden;
+  max-width: 100%;
   line-height: 1.7;
 }
 
@@ -1806,7 +1812,6 @@ ul { list-style: none; }
   }
 
   /* Show hamburger button */
->>>>>>> 1bbbb29 (Refactor mobile navbar into a dropdown menu)
   .hamburger { display: flex; }
 
   /* Make nav-inner relative for dropdown positioning */

@@ -1832,6 +1832,7 @@ ul { list-style: none; }
 @media (max-width: 768px) {
   .section { padding: 70px 0; }
   .nav-links { display: none; }
+.nav-links.open { display: flex; flex-direction: column; gap: 0.5rem; }
   .hamburger { display: flex; }
   .pillars-grid { grid-template-columns: 1fr; }
   .pillar-card-wide { grid-column: span 1; }

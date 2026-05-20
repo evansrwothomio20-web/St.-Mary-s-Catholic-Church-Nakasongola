@@ -1811,8 +1811,22 @@ ul { list-style: none; }
     width: 100%;
   }
 
-  /* Show hamburger button */
-  .hamburger { display: flex; }
+
+
+  /* Adjust partner-orb to stay within viewport on mobile */
+  .partner-orb {
+    right: -250px;
+  }
+
+  /* Ensure no horizontal overflow on mobile */
+  .hero-container,
+  .hero-grid,
+  .container {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+
 
   /* Make nav-inner relative for dropdown positioning */
   .nav-inner { position: relative; }

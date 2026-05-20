@@ -1744,6 +1744,15 @@ ul { list-style: none; }
 @media (max-width: 768px) {
   .section { padding: 70px 0; }
 
+  /* Prevent shaky zoom animation and jittery scroll on mobile */
+  .hero-bg {
+    animation: none !important;
+    transform: scale(1) !important;
+  }
+  .impact-bg-img {
+    background-attachment: scroll !important;
+  }
+
 
   /* Hide nav-links by default on mobile */
   .nav-links {

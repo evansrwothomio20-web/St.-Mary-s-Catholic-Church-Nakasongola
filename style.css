@@ -316,16 +316,45 @@ ul { list-style: none; }
   transition: var(--transition);
 }
 
-/* ---------- MOBILE OVERLAY ---------- */
-.mobile-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  background: var(--clr-charcoal);
-  transform: translateX(100%);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  flex-direction: column;
+/* ---------- MOBILE FIXES ---------- */
+@media (max-width: 768px) {
+  /* Board grid - single column to avoid overlap */
+  .board-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .board-img-wrap, .board-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  /* CEO image visible and sized */
+  .ceo-img-wrap {
+    height: 250px; /* reduced height for mobile */
+    overflow: hidden;
+  }
+  .ceo-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Hamburger overlay logo styling */
+  .mobile-header .logo {
+    max-height: 48px;
+    margin: 0 auto;
+    display: block;
+  }
+  /* Ensure hamburger icon is visible */
+  .mobile-header img {
+  max-height: 48px;
+  display: block;
+  margin: 0 auto;
+}
+.board-photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 }
 .mobile-overlay.open { transform: translateX(0); }
 

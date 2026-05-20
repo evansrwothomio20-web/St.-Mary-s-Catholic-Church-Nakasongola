@@ -1,0 +1,17 @@
+{
+  "name": "Ama-Tualu Foundation",
+  "short_name": "Ama-Tualu",
+  "description": "Ama-Tualu Foundation Official Website",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDFBF7",
+  "theme_color": "#1E3550",
+  "icons": [
+    {
+      "src": "assets/Ama-Tualu-Logo-Symbol.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

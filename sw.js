@@ -1,38 +1,29 @@
-const CACHE_NAME = 'ama-tualu-cache-v1';
+const CACHE_NAME = 'ama-tualu-cache-v2';
 const urlsToCache = [
   '/',
   '/index.html',
   '/style.css',
   '/main.js',
+  '/manifest.json',
   '/assets/Ama-Tualu-Logo-Symbol.png',
-  '/assets/Ama-Tualu-Logo.png'
+  '/assets/Ama-Tualu-Logo.png',
+  '/assets/community-event-1.jpeg',
+  '/assets/community-event-2.jpeg',
+  '/assets/community-event-3.jpeg',
+  '/assets/community-event-4.jpeg',
+  '/assets/community-event-5.jpeg'
 ];
 
-// Install event: cache essential files
+// Install event: cache essential files and activate immediately
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => {
-        return cache.addAll(urlsToCache);
-      })
+      .then(cache => cache.addAll(urlsToCache))
+      .then(() => self.skipWaiting())
   );
 });
 
-// Fetch event: serve from cache if available, else from network
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        // Cache hit - return response
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      })
-  );
-});
-
-// Activate event: clean up old caches
+// Activate event: clean up old caches and take control of clients
 self.addEventListener('activate', event => {
   const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
@@ -44,6 +35,44 @@ self.addEventListener('activate', event => {
           }
         })
       );
+    }).then(() => self.clients.claim())
+  );
+});
+
+function isNavigationRequest(request) {
+  return request.mode === 'navigate' ||
+         (request.method === 'GET' && request.headers.get('accept')?.includes('text/html'));
+}
+
+self.addEventListener('fetch', event => {
+  const request = event.request;
+
+  if (isNavigationRequest(request)) {
+    event.respondWith(
+      fetch(request)
+        .then(networkResponse => {
+          const clonedResponse = networkResponse.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(request, clonedResponse));
+          return networkResponse;
+        })
+        .catch(() => caches.match('/index.html'))
+    );
+    return;
+  }
+
+  event.respondWith(
+    caches.match(request).then(cachedResponse => {
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+      return fetch(request).then(networkResponse => {
+        if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+          return networkResponse;
+        }
+        const responseClone = networkResponse.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(request, responseClone));
+        return networkResponse;
+      });
     })
   );
 });

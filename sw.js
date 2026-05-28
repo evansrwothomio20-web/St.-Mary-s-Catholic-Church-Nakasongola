@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ama-tualu-cache-v9';
+const CACHE_NAME = 'ama-tualu-cache-v10';
 const urlsToCache = [
   '/',
   '/index.html',

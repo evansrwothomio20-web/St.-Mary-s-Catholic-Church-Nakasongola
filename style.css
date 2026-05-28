@@ -395,10 +395,11 @@ ul { list-style: none; }
 .hero-welcome {
   font-family: var(--ff-ui);
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.9);
+  color: #ffffff;
   margin-bottom: 1rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-shadow: 0 6px 12px rgba(0,0,0,0.18);
 }
 
 .hero-headline {
@@ -954,14 +955,20 @@ ul { list-style: none; }
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
+  aspect-ratio: 16 / 10;
 }
-.media-primary { height: 380px; }
-.media-secondary { height: 380px; }
-.media-photo { width: 100%; height: 100%; object-fit: cover; }
+.media-primary { height: auto; }
+.media-secondary { height: auto; }
+.media-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 .media-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(20,30,48,0.8) 0%, transparent 55%);
+  background: linear-gradient(to top, rgba(20,30,48,0.65) 0%, transparent 55%);
 }
 .media-caption {
   position: absolute;

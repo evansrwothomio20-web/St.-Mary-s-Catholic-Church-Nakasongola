@@ -1221,6 +1221,22 @@ ul { list-style: none; }
   color: var(--clr-muted);
   line-height: 1.65;
 }
+.board-linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-family: var(--ff-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #0a66c2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color var(--transition);
+}
+.board-linkedin-btn:hover {
+  color: var(--clr-forest);
+}
 
 /* ---------- NORDIC PARTNERSHIP ---------- */
 .partnership {

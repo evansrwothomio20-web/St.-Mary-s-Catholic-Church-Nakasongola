@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ama-tualu-cache-v10';
+const CACHE_NAME = 'st-marys-cache-v1';
 const urlsToCache = [
   '/',
   '/index.html',

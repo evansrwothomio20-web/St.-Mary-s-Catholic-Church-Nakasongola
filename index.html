@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>AMA-TUALU FOUNDATION — We Are Together</title>
-  <meta name="description" content="AMA-TUALU FOUNDATION empowers young Africans in West Nile, Uganda to lead, innovate, and explore their full potential through wisdom, mentorship, and community." />
+  <title>ST MARY'S LAKE VIEW CATHOLIC PARISH-LWAMPANGA</title>
+  <meta name="description" content="Official website of St Mary's Lake View Catholic Parish in Lwampanga, Nakasongola District. A warm faith community of worship, sacraments, and spiritual outreach." />
   <link rel="icon" type="image/png" href="assets/Ama-Tualu-Logo-Symbol.png" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#1E3550" />
@@ -13,8 +13,1937 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
   <style>
+/* ============================================================
+   AMA-TUALU FOUNDATION — style.css
+   Color Palette: Navy #1E3550 | Terracotta #BB593C | Gold #CE9B51
+   Background: Cream #FDFBF7 | White #FFFFFF
+============================================================ */
+
+/* ---------- RESET & BASE ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --clr-forest:     #1E3550; /* Deep Navy Blue */
+  --clr-earth:      #BB593C; /* Terracotta/Rust */
+  --clr-sage:       #7A9E7E;
+  --clr-amber:      #CE9B51; /* Gold/Sand */
+  --clr-cream:      #FDFBF7;
+  --clr-warm-white: #FFFFFF;
+  --clr-charcoal:   #1A1A2E;
+  --clr-muted:      #6B6B7B;
+  --clr-navy-dark:  #111B2B;
+
+  --ff-display: 'Playfair Display', serif;
+  --ff-body:    'Lora', serif;
+  --ff-ui:      'DM Sans', sans-serif;
+
+  --radius:    12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --shadow-sm: 0 4px 16px rgba(0,0,0,0.07);
+  --shadow-md: 0 12px 40px rgba(0,0,0,0.12);
+  --shadow-lg: 0 24px 60px rgba(0,0,0,0.18);
+
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html { 
+  scroll-behavior: smooth; 
+  font-size: 16px; 
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--ff-ui);
+  background-color: var(--clr-cream);
+  color: var(--clr-charcoal);
+  overflow-x: hidden;
+  max-width: 100%;
+  line-height: 1.7;
+}
+
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section { padding: 110px 0; }
+
+/* ---------- REVEAL ANIMATIONS ---------- */
+.reveal, .reveal-left, .reveal-right, .reveal-up {
+  opacity: 0;
+  transition: opacity 0.75s ease, transform 0.75s ease;
+  transition-delay: var(--delay, 0s);
+}
+.reveal       { transform: translateY(30px); }
+.reveal-left  { transform: translateX(-50px); }
+.reveal-right { transform: translateX(50px); }
+.reveal-up    { transform: translateY(45px); }
+
+.reveal.visible, .reveal-left.visible,
+.reveal-right.visible, .reveal-up.visible {
+  opacity: 1; transform: translate(0, 0);
+}
+
+/* ---------- TYPOGRAPHY HELPERS ---------- */
+.section-tag {
+  display: inline-block;
+  font-family: var(--ff-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-earth);
+  margin-bottom: 1rem;
+}
+
+.section-tag-gold {
+  display: inline-block;
+  font-family: var(--ff-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-amber);
+  margin-bottom: 1rem;
+}
+
+.section-tag-terra {
+  display: inline-block;
+  font-family: var(--ff-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-earth);
+  margin-bottom: 1rem;
+}
+
+.section-tag-navy {
+  display: inline-block;
+  font-family: var(--ff-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-forest);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--clr-forest);
+  margin-bottom: 1.2rem;
+}
+.section-title.light { color: #F7F2EB; }
+.section-title em, em.highlight-gold { font-style: italic; color: var(--clr-amber); }
+.section-title em.highlight-terra, em.highlight-terra { font-style: italic; color: var(--clr-earth); }
+.accent-italic { font-style: italic; color: var(--clr-amber); }
+
+.section-subtitle {
+  font-family: var(--ff-ui);
+  font-size: 1.05rem;
+  color: var(--clr-muted);
+  max-width: 540px;
+  line-height: 1.8;
+}
+.section-subtitle.light { color: rgba(255,255,255,0.7); }
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section-header .section-subtitle { margin: 0 auto; }
+
+.body-text {
+  font-family: var(--ff-body);
+  font-size: 1.05rem;
+  color: #4a4a5a;
+  margin-bottom: 1.2rem;
+  line-height: 1.85;
+}
+
+.section-divider-line {
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-earth), var(--clr-amber));
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- TAG MARKS (decorative lines) ---------- */
+.tag-mark {
+  width: 28px; height: 2px;
+  background: var(--clr-amber);
+  border-radius: 2px;
+}
+.tag-mark-terra {
+  width: 28px; height: 2px;
+  background: var(--clr-earth);
+  border-radius: 2px;
+}
+.tag-mark-navy {
+  width: 28px; height: 2px;
+  background: var(--clr-forest);
+  border-radius: 2px;
+}
+
+.heading-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.justify-center { justify-content: center; }
+
+.about-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--clr-forest);
+  color: #fff;
+  font-family: var(--ff-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  border: 2px solid var(--clr-forest);
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: 0.03em;
+}
+.btn-primary:hover {
+  background: transparent;
+  color: var(--clr-forest);
+}
+.full-width { width: 100%; justify-content: center; }
+
+.btn-ghost-hero {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: rgba(255,255,255,0.9);
+  font-family: var(--ff-ui);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  border: 2px solid rgba(255,255,255,0.45);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-ghost-hero:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.8); }
+
+.btn-amber-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--clr-amber);
+  color: #fff;
+  font-family: var(--ff-ui);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  border: 2px solid var(--clr-amber);
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 0.75rem;
+}
+.btn-amber-sm:hover { background: transparent; color: var(--clr-amber); }
+
+/* ---------- NAVBAR ---------- */
+#navbar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.nav-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0.8rem 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.nav-links li a {
+  font-family: var(--ff-ui);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.92);
+  transition: color var(--transition);
+  letter-spacing: 0.02em;
+}
+.nav-links li a:hover { color: var(--clr-amber); }
+
+.nav-cta {
+  background: var(--clr-amber);
+  color: #fff !important;
+  padding: 0.55rem 1.4rem;
+  border-radius: 50px;
+  font-weight: 600 !important;
+  transition: opacity var(--transition), transform var(--transition) !important;
+}
+.nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Hamburger animation when open */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* ---------- MOBILE FIXES ---------- */
+@media (max-width: 768px) {
+  /* Board grid - single column to avoid overlap */
+  .board-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .board-img-wrap, .board-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  /* CEO image visible and sized */
+  .ceo-img-wrap {
+    height: 250px;
+    overflow: hidden;
+  }
+  .ceo-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  transform: none;
+  animation: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(7, 15, 28, 0.90) 0%,
+    rgba(14, 26, 46, 0.72) 40%,
+    rgba(44, 67, 110, 0.40) 68%,
+    rgba(216, 163, 78, 0.12) 100%
+  );
+}
+
+.hero-welcome {
+  font-family: var(--ff-ui);
+  font-size: 0.95rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 6px 12px rgba(0,0,0,0.18);
+}
+
+.hero-headline {
+  text-shadow: 0 24px 40px rgba(0, 0, 0, 0.28);
+}
+
+.hero-subtitle {
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+}
+
+.btn-ghost-hero {
+  background: rgba(255, 255, 255, 0.10);
+  color: rgba(255, 255, 255, 0.95);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+.btn-ghost-hero:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.92);
+}
+
+.accent-bar {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 3px;
+  opacity: 0.45;
+}
+.accent-bar.left { left: 3%; background: linear-gradient(to bottom, transparent, var(--clr-amber), transparent); }
+.accent-bar.right { right: 3%; background: linear-gradient(to bottom, transparent, var(--clr-earth), transparent); }
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem 4%;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 760px;
+  gap: 2.5rem;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.hero-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero-eyebrow {
+  font-family: var(--ff-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--clr-amber);
+}
+
+.title-stack { margin-bottom: 1.5rem; }
+
+.hero-headline {
+  font-family: var(--ff-display);
+  font-size: clamp(3rem, 6.5vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: #fff;
+  display: block;
+}
+.headline-gold { font-style: italic; color: var(--clr-amber); }
+
+.hero-subtitle {
+  font-family: var(--ff-ui);
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+  max-width: 500px;
+  line-height: 1.8;
+  margin-bottom: 2.2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.h-stat { text-align: center; }
+.h-stat-val {
+  display: block;
+  font-family: var(--ff-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--clr-amber);
+  line-height: 1;
+}
+.h-stat-label {
+  display: block;
+  font-family: var(--ff-ui);
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+}
+.h-stat-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.2);
+}
+
+/* Hero Visual */
+.hero-visual { position: relative; }
+
+.portrait-frame {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  height: 520px;
+  box-shadow: var(--shadow-lg);
+}
+.portrait-photo { width: 100%; height: 100%; object-fit: cover; }
+
+.portrait-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,30,48,0.75) 0%, transparent 55%);
+}
+.portrait-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+}
+.caption-quote {
+  font-family: var(--ff-display);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 0.25rem;
+}
+.caption-label {
+  font-family: var(--ff-ui);
+  font-size: 0.72rem;
+  color: var(--clr-amber);
+  letter-spacing: 0.1em;
+}
+
+.floating-card {
+  position: absolute;
+  bottom: 2rem;
+  left: -2.5rem;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius);
+  padding: 1rem 1.4rem;
+  box-shadow: var(--shadow-md);
+  min-width: 180px;
+  z-index: 3;
+}
+.card-row { display: flex; align-items: center; gap: 0.75rem; }
+.card-icon-wrap {
+  width: 36px; height: 36px;
+  background: rgba(206,155,81,0.12);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.icon-gold-sm { color: var(--clr-amber); font-size: 1rem; }
+.card-title { font-family: var(--ff-ui); font-size: 1rem; font-weight: 700; color: var(--clr-forest); }
+.card-meta { font-family: var(--ff-ui); font-size: 0.75rem; color: var(--clr-muted); }
+
+.corner-accent {
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
+  width: 80px; height: 80px;
+  border: 3px solid var(--clr-amber);
+  border-radius: var(--radius-lg);
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* Hero scroll hint */
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 2;
+}
+.hero-scroll-hint span {
+  font-family: var(--ff-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  writing-mode: vertical-rl;
+}
+.scroll-line {
+  width: 1px; height: 50px;
+  background: rgba(255,255,255,0.2);
+  position: relative; overflow: hidden;
+}
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  top: -100%; left: 0;
+  width: 100%; height: 100%;
+  background: var(--clr-amber);
+  animation: scrollDrop 2s ease infinite;
+}
+@keyframes scrollDrop { 0% { top: -100%; } 100% { top: 200%; } }
+
+/* ---------- TICKER BANNER ---------- */
+.mission-banner {
+  background: var(--clr-forest);
+  padding: 0.9rem 0;
+  overflow: hidden;
+}
+.ticker-wrap { display: flex; width: 100%; overflow: hidden; }
+.ticker {
+  display: flex;
+  gap: 2rem;
+  animation: ticker 28s linear infinite;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ticker span {
+  font-family: var(--ff-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(253,251,247,0.65);
+}
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ---------- ABOUT ---------- */
+.about { background: var(--clr-warm-white); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 5rem;
+  align-items: start;
+}
+
+.about-image-wrap {
+  position: relative;
+  height: 540px;
+  min-width: 0;
+  z-index: 1;
+}
+
+.about-img-block {
+  position: absolute;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.img-block-1 { width: 72%; height: 430px; top: 0; left: 0; }
+.img-block-2 { width: 52%; height: 270px; bottom: 0; right: 0; border: 4px solid var(--clr-warm-white); }
+
+.about-corner-bracket {
+  position: absolute;
+  top: -1.5rem;
+  left: -1.5rem;
+  width: 60px; height: 60px;
+  border-top: 3px solid var(--clr-amber);
+  border-left: 3px solid var(--clr-amber);
+  border-radius: 4px 0 0 0;
+  opacity: 0.6;
+}
+
+.about-text {
+  padding-left: 0.5rem;
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.about-tag-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.90);
+  box-shadow: var(--shadow-sm);
+  width: fit-content;
+}
+
+.about-quote-card {
+  background: linear-gradient(135deg, rgba(30,53,80,0.05) 0%, rgba(206,155,81,0.08) 100%);
+  border-left: 4px solid var(--clr-amber);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.quote-orb {
+  position: absolute;
+  top: -20px; right: -20px;
+  width: 80px; height: 80px;
+  background: radial-gradient(circle, rgba(206,155,81,0.15), transparent);
+  border-radius: 50%;
+}
+.quote-label-sm {
+  font-family: var(--ff-ui);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--clr-amber);
+  margin-bottom: 0.5rem;
+}
+.quote-body-text {
+  font-family: var(--ff-display);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--clr-forest);
+  line-height: 1.6;
+}
+
+.checklist { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.2rem; }
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-family: var(--ff-ui);
+  font-size: 0.9rem;
+  color: #4a4a5a;
+  line-height: 1.6;
+}
+.check-icon {
+  width: 22px; height: 22px;
+  background: rgba(30,53,80,0.08);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--clr-forest);
+  font-size: 0.65rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+/* ---------- PILLARS ---------- */
+.pillars {
+  background: var(--clr-charcoal);
+  position: relative;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.orb-top-right {
+  top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(206,155,81,0.08), transparent 70%);
+}
+.orb-bottom-left {
+  bottom: -100px; left: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(187,89,60,0.08), transparent 70%);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.pillar-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.8rem;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--transition), transform var(--transition), border-color var(--transition);
+}
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-amber), var(--clr-earth));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+.pillar-card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(206,155,81,0.25);
+  transform: translateY(-5px);
+}
+.pillar-card:hover::before { transform: scaleX(1); }
+
+.pillar-card-wide {
+  grid-column: span 3;
+  background: linear-gradient(135deg, rgba(206,155,81,0.07), rgba(187,89,60,0.05));
+  border-color: rgba(206,155,81,0.2);
+}
+.pillar-wide-inner {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+.pillar-wide-left { flex-shrink: 0; }
+.pillar-wide-right { flex: 1; }
+
+.pillar-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+.pillar-icon-wrap {
+  width: 50px; height: 50px;
+  background: rgba(206,155,81,0.12);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--clr-amber);
+  font-size: 1.3rem;
+}
+.pillar-num {
+  font-family: var(--ff-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.07);
+  line-height: 1;
+}
+.pillar-title {
+  font-family: var(--ff-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.7rem;
+}
+.pillar-desc {
+  font-family: var(--ff-ui);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.75;
+  margin-bottom: 1.2rem;
+}
+.pillar-link {
+  font-family: var(--ff-ui);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--clr-amber);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: gap var(--transition);
+}
+.pillar-link:hover { gap: 0.75rem; }
+.pillar-link i { font-size: 0.75em; }
+
+.pillar-badge {
+  display: inline-block;
+  background: var(--clr-earth);
+  color: #fff;
+  font-family: var(--ff-ui);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 50px;
+  margin-top: 0.5rem;
+}
+
+/* ---------- IMPACT STATS ---------- */
+.impact-stats {
+  position: relative;
+  padding: 110px 0;
+  overflow: hidden;
+}
+.impact-bg-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: brightness(0.18) saturate(0.5);
+}
+.impact-stats .container { position: relative; z-index: 2; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.stat-card {
+  padding: 2rem 1rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px);
+  transition: background var(--transition);
+}
+.stat-card:hover { background: rgba(255,255,255,0.08); }
+.stat-counter {
+  font-family: var(--ff-display);
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--clr-amber);
+  line-height: 1;
+}
+.stat-suffix {
+  font-family: var(--ff-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--clr-amber);
+}
+.stat-desc {
+  font-family: var(--ff-ui);
+  font-size: 0.85rem;
+  color: rgba(247,242,235,0.65);
+  margin-top: 0.6rem;
+  letter-spacing: 0.04em;
+}
+
+/* Media Grid */
+.media-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.media-primary, .media-secondary {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+.media-primary { height: auto; }
+.media-secondary { height: auto; }
+.media-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,30,48,0.65) 0%, transparent 55%);
+}
+.media-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.5rem;
+}
+.media-tag {
+  display: inline-block;
+  background: var(--clr-amber);
+  color: #fff;
+  font-family: var(--ff-ui);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 50px;
+  margin-bottom: 0.5rem;
+}
+.media-title {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+.media-title-sm {
+  font-family: var(--ff-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Story Cards */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.story-card {
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+.story-card-terra {
+  background: rgba(187,89,60,0.12);
+  border: 1px solid rgba(187,89,60,0.25);
+}
+.story-card-gold {
+  background: rgba(206,155,81,0.1);
+  border: 1px solid rgba(206,155,81,0.2);
+}
+.story-card-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.story-icon-box-terra {
+  width: 40px; height: 40px;
+  background: var(--clr-earth);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.story-icon-box-gold {
+  width: 40px; height: 40px;
+  background: var(--clr-amber);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.story-title {
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+.story-body {
+  font-family: var(--ff-ui);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.75;
+}
+
+/* ---------- PHOTO GALLERY ---------- */
+.gallery { background: var(--clr-cream); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.gallery-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--clr-cream);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.gallery-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+
+.gallery-img { position: relative; height: 230px; overflow: hidden; }
+.gallery-img img { transition: transform 0.6s ease; }
+.gallery-card:hover .gallery-img img { transform: scale(1.06); }
+
+/* ---------- MERCHANDISE ---------- */
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.merch-card {
+  background: #2a2a2a;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition);
+}
+.merch-card:hover { transform: translateY(-5px); }
+.merch-card .gallery-img { height: 200px; }
+.merch-info {
+  padding: 1.2rem;
+  text-align: center;
+}
+.merch-info h4 {
+  font-family: var(--ff-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+/* ---------- LEADERSHIP ---------- */
+.leadership { background: var(--clr-warm-white); }
+
+.ceo-card {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 4rem;
+  align-items: center;
+  background: var(--clr-cream);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 4rem;
+  border: 1px solid rgba(30,53,80,0.06);
+}
+.ceo-img-wrap { height: 480px; overflow: hidden; }
+.ceo-photo { width: 100%; height: 100%; object-fit: cover; }
+.ceo-text { padding: 3rem 3rem 3rem 0; }
+.ceo-name {
+  font-family: var(--ff-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--clr-forest);
+  margin-bottom: 1.2rem;
+  line-height: 1.1;
+}
+.ceo-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+.ceo-tag {
+  background: rgba(30,53,80,0.07);
+  color: var(--clr-forest);
+  font-family: var(--ff-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  border: 1px solid rgba(30,53,80,0.15);
+}
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+.board-card {
+  background: var(--clr-cream);
+  border: 1px solid rgba(30,53,80,0.08);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.board-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-forest), var(--clr-amber));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+.board-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(30,53,80,0.15); }
+.board-card:hover::after { transform: scaleX(1); }
+
+.board-icon {
+  width: 44px; height: 44px;
+  background: rgba(30,53,80,0.07);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--clr-forest);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.board-img-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 2px solid var(--clr-amber);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.board-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.board-name {
+  font-family: var(--ff-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--clr-navy);
+  margin-bottom: 0.25rem;
+}
+.board-role {
+  font-family: var(--ff-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-forest);
+  margin-bottom: 0.2rem;
+  line-height: 1.3;
+}
+.board-dept {
+  font-family: var(--ff-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-amber);
+  margin-bottom: 0.75rem;
+}
+.board-desc {
+  font-family: var(--ff-ui);
+  font-size: 0.85rem;
+  color: var(--clr-muted);
+  line-height: 1.65;
+}
+.board-linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-family: var(--ff-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #0a66c2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color var(--transition);
+}
+.board-linkedin-btn:hover {
+  color: var(--clr-forest);
+}
+
+/* ---------- NORDIC PARTNERSHIP ---------- */
+.partnership {
+  background: var(--clr-charcoal);
+  position: relative;
+  overflow: hidden;
+}
+.partner-orb {
+  position: absolute;
+  top: -150px; right: -150px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(206,155,81,0.07), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.partner-flex {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.partner-title {
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.partner-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+.partner-badge-light {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.75);
+  font-family: var(--ff-ui);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+}
+.partner-badge-gold {
+  background: rgba(206,155,81,0.15);
+  border: 1px solid rgba(206,155,81,0.4);
+  color: var(--clr-amber);
+  font-family: var(--ff-ui);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: 50px;
+}
+
+.partnership .body-text { color: rgba(255,255,255,0.65); }
+
+.why-list { margin-top: 1.5rem; }
+.why-heading {
+  font-family: var(--ff-ui);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+.why-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.6rem; }
+.why-dot {
+  width: 6px; height: 6px;
+  background: var(--clr-amber);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.55rem;
+}
+.why-item span {
+  font-family: var(--ff-ui);
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.65;
+}
+
+.partner-visual { position: relative; }
+.partner-img-frame {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  height: 480px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+.partner-photo { width: 100%; height: 100%; object-fit: cover; }
+.partner-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(20,30,48,0.4), transparent);
+}
+.partner-info-card {
+  position: absolute;
+  bottom: 2rem;
+  left: -2rem;
+  background: rgba(253,251,247,0.97);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.5rem;
+  box-shadow: var(--shadow-md);
+  min-width: 220px;
+  z-index: 3;
+}
+.partner-info-card .card-title { color: var(--clr-forest); }
+
+/* ---------- MEMBERSHIP ---------- */
+.membership { background: var(--clr-cream); }
+
+.membership-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.wisdom-card {
+  background: var(--clr-charcoal);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+.wisdom-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--clr-amber), var(--clr-earth));
+}
+.wisdom-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 2rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.wisdom-label {
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+.wisdom-items { padding: 1.5rem 2rem 2rem; display: flex; flex-direction: column; gap: 1.1rem; }
+.wisdom-item { display: flex; align-items: center; gap: 1rem; }
+
+.wisdom-icon-terra, .wisdom-icon-gold, .wisdom-icon-navy {
+  width: 40px; height: 40px;
+  border-radius: 11px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.wisdom-icon-terra { background: rgba(187,89,60,0.2); color: var(--clr-earth); }
+.wisdom-icon-gold  { background: rgba(206,155,81,0.2); color: var(--clr-amber); }
+.wisdom-icon-navy  { background: rgba(30,53,80,0.4); color: #7aadff; }
+
+.wisdom-item-title {
+  font-family: var(--ff-ui);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+}
+.wisdom-item .card-meta { color: rgba(255,255,255,0.45); }
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-family: var(--ff-ui);
+  font-size: 0.92rem;
+  color: #4a4a5a;
+  line-height: 1.6;
+}
+.feature-icon { color: var(--clr-forest); font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+/* ---------- DONATE ---------- */
+.donate { background: var(--clr-warm-white); }
+
+.donate-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.impact-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+.impact-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: var(--clr-cream);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--clr-amber);
+}
+.impact-amount {
+  font-family: var(--ff-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--clr-forest);
+  min-width: 70px;
+}
+.impact-desc {
+  font-family: var(--ff-ui);
+  font-size: 0.9rem;
+  color: var(--clr-muted);
+}
+
+.donate-form-wrap {}
+.donate-form {
+  background: var(--clr-cream);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(30,53,80,0.06);
+}
+.donate-form h3 {
+  font-family: var(--ff-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--clr-forest);
+  margin-bottom: 1.5rem;
+}
+.amount-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+.amount-btn {
+  padding: 0.7rem 0.5rem;
+  border-radius: var(--radius);
+  border: 1.5px solid rgba(30,53,80,0.15);
+  background: transparent;
+  font-family: var(--ff-ui);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--clr-forest);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.amount-btn:hover, .amount-btn.active {
+  background: var(--clr-forest);
+  color: #fff;
+  border-color: var(--clr-forest);
+}
+
+.custom-amount-wrap { margin-bottom: 1.25rem; }
+.custom-amount-wrap label {
+  display: block;
+  font-family: var(--ff-ui);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--clr-muted);
+  margin-bottom: 0.4rem;
+}
+.input-prefix {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid rgba(30,53,80,0.15);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.input-prefix span {
+  padding: 0.65rem 1rem;
+  background: rgba(30,53,80,0.05);
+  font-family: var(--ff-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--clr-forest);
+  border-right: 1.5px solid rgba(30,53,80,0.1);
+}
+.input-prefix input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0.65rem 1rem;
+  font-family: var(--ff-ui);
+  font-size: 0.95rem;
+  background: transparent;
+  color: var(--clr-charcoal);
+}
+
+.frequency-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  background: rgba(30,53,80,0.05);
+  border-radius: var(--radius);
+  padding: 0.3rem;
+}
+.freq-btn {
+  flex: 1;
+  padding: 0.55rem;
+  border: none;
+  background: transparent;
+  font-family: var(--ff-ui);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--clr-muted);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.freq-btn.active { background: var(--clr-warm-white); color: var(--clr-forest); font-weight: 700; box-shadow: var(--shadow-sm); }
+
+.donor-fields { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.25rem; }
+.donor-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid rgba(30,53,80,0.15);
+  border-radius: var(--radius);
+  font-family: var(--ff-ui);
+  font-size: 0.9rem;
+  background: var(--clr-warm-white);
+  color: var(--clr-charcoal);
+  outline: none;
+  transition: border-color var(--transition);
+}
+.donor-input:focus { border-color: var(--clr-forest); }
+
+.btn-donate {
+  width: 100%;
+  padding: 1rem;
+  background: var(--clr-earth);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--ff-ui);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.75rem;
+}
+.btn-donate:hover { background: #a34e34; transform: translateY(-2px); }
+.secure-note {
+  text-align: center;
+  font-family: var(--ff-ui);
+  font-size: 0.78rem;
+  color: var(--clr-muted);
+}
+
+/* ---------- CONTACT ---------- */
+.contact-section { background: var(--clr-cream); }
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.contact-form-container { }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+.form-group { display: flex; flex-direction: column; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.85rem 1.1rem;
+  border: 1.5px solid rgba(30,53,80,0.15);
+  border-radius: var(--radius);
+  font-family: var(--ff-ui);
+  font-size: 0.95rem;
+  background: var(--clr-warm-white);
+  color: var(--clr-charcoal);
+  outline: none;
+  transition: border-color var(--transition);
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--clr-forest); }
+.form-group select { appearance: none; cursor: pointer; }
+.form-group textarea { resize: vertical; min-height: 140px; }
+
+.contact-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+.info-block {}
+.info-block h3 {
+  font-family: var(--ff-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--clr-forest);
+  margin-bottom: 0.5rem;
+}
+.info-block h3 em { font-style: italic; color: var(--clr-amber); }
+.info-block p { font-family: var(--ff-ui); font-size: 0.9rem; color: var(--clr-muted); margin-bottom: 0.5rem; }
+
+.location-details { display: flex; flex-direction: column; gap: 0.5rem; }
+.location-details li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--ff-ui);
+  font-size: 0.9rem;
+  color: #4a4a5a;
+}
+.location-details li i { color: var(--clr-forest); width: 16px; text-align: center; }
+
+.emergency-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--ff-ui);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--clr-forest);
+  transition: color var(--transition);
+}
+.emergency-link:hover { color: var(--clr-amber); }
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background: var(--clr-navy-dark);
+  padding: 5rem 0 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.footer-brand p {
+  font-family: var(--ff-ui);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.75;
+  max-width: 320px;
+  margin-top: 1rem;
+}
+
+.social-links { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+.social-icon {
+  width: 38px; height: 38px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.85rem;
+  transition: var(--transition);
+}
+.social-icon:hover { background: var(--clr-amber); border-color: var(--clr-amber); color: #fff; }
+
+.footer-col h4 {
+  font-family: var(--ff-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 1.2rem;
+}
+.footer-col ul { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-col ul li a {
+  font-family: var(--ff-ui);
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.55);
+  transition: color var(--transition);
+}
+.footer-col ul li a:hover { color: var(--clr-amber); }
+.footer-col ul li {
+  font-family: var(--ff-ui);
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-bottom {
+  padding: 1.5rem 0;
+  text-align: center;
+}
+.footer-bottom p {
+  font-family: var(--ff-ui);
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.28);
+}
+
+/* ---------- MODAL ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20,30,48,0.8);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+.modal-overlay.active { opacity: 1; pointer-events: all; }
+
+.modal-box {
+  background: var(--clr-warm-white);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: var(--shadow-lg);
+}
+.modal-icon {
+  width: 64px; height: 64px;
+  background: linear-gradient(135deg, var(--clr-forest), var(--clr-amber));
+  color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 auto 1.5rem;
+}
+.modal-box h3 {
+  font-family: var(--ff-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--clr-forest);
+  margin-bottom: 0.75rem;
+}
+.modal-box p {
+  font-family: var(--ff-ui);
+  font-size: 0.95rem;
+  color: var(--clr-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- BACK TO TOP ---------- */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px; height: 44px;
+  background: var(--clr-forest);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 99;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: var(--transition);
+}
+.back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+.back-to-top:hover { background: var(--clr-amber); transform: translateY(-3px); }
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 1100px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-visual { display: none; }
+  .hero { min-height: 90vh; padding-top: 120px; }
+  .hero-subtitle { max-width: 600px; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-image-wrap { height: 360px; }
+  .pillars-grid { grid-template-columns: 1fr 1fr; }
+  .pillar-card-wide { grid-column: span 2; }
+  .pillar-wide-inner { flex-direction: column; gap: 1.5rem; }
+  .board-grid { grid-template-columns: repeat(2, 1fr); }
+  .ceo-card { grid-template-columns: 1fr; }
+  .ceo-img-wrap { height: 300px; }
+  .ceo-text { padding: 2rem; }
+  .partner-flex { grid-template-columns: 1fr; gap: 3rem; }
+  .membership-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .donate-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .row { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .merch-grid { grid-template-columns: repeat(2, 1fr); }
+  .media-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 70px 0; }
+
+  /* Prevent shaky zoom animation and jittery scroll on mobile */
+  .hero-bg {
+    animation: none !important;
+    transform: scale(1) !important;
+  }
+  .impact-bg-img {
+    background-attachment: scroll !important;
+  }
+
+
+  /* Hide nav-links by default on mobile */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(20, 30, 48, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 1.5rem 2rem;
+    gap: 0;
+    border-bottom: 2px solid var(--clr-amber);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    z-index: 999;
+  }
+
+  /* Show nav-links when hamburger is toggled */
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-links li:last-child {
+    border-bottom: none;
+    padding-top: 0.5rem;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 0.85rem 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    transition: color 0.25s ease, padding-left 0.25s ease;
+  }
+  .nav-links li a:hover {
+    color: var(--clr-amber);
+    padding-left: 0.5rem;
+  }
+
+  .nav-cta {
+    display: inline-block;
+    text-align: center;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+
+
+  /* Adjust partner-orb to stay within viewport on mobile */
+  .partner-orb {
+    right: -250px;
+  }
+
+  /* Ensure no horizontal overflow on mobile */
+  .hero-container,
+  .hero-grid,
+  .container {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+
+
+  /* Make nav-inner relative for dropdown positioning */
+  .nav-inner { position: relative; }
+
+  .pillars-grid { grid-template-columns: 1fr; }
+  .pillar-card-wide { grid-column: span 1; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .story-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .board-grid { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: column; gap: 1rem; }
+  .h-stat-divider { width: 36px; height: 1px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .merch-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .merch-grid { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .container { padding: 0 1.25rem; }
+}
+
+
+    /* --- Combined internal styles --- */
     .hero-bg {
       background-image: url('assets/Herosection.png');
       background-size: cover;
@@ -35,8 +1964,12 @@
   <!-- ===================== NAVBAR ===================== -->
   <nav id="navbar">
     <div class="nav-inner">
-      <a href="#home" class="logo">
-        <img src="assets/Ama-Tualu-Logo.png" alt="Ama-Tualu Foundation Logo" style="height: 64px; width: auto; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);" />
+      <a href="#home" class="logo-text" style="font-family: var(--ff-display); font-weight: 700; color: var(--clr-warm-white); display: flex; align-items: center; gap: 10px;">
+        <i class="fa-solid fa-church" style="color: var(--clr-amber); font-size: 1.4rem;"></i>
+        <span style="display: flex; flex-direction: column; line-height: 1.1;">
+          <span style="font-size: 1.15rem; font-weight: 800; color: #fff;">ST. MARY'S LAKE VIEW</span>
+          <span style="font-size: 0.72rem; letter-spacing: 0.12em; font-family: var(--ff-ui); font-weight: 600; color: var(--clr-amber);">CATHOLIC PARISH - LWAMPANGA</span>
+        </span>
       </a>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -44,12 +1977,12 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#pillars">Pillars</a></li>
-        <li><a href="#impact">Impact</a></li>
+        <li><a href="#pillars">Ministries</a></li>
+        <li><a href="#impact">Stats</a></li>
         <li><a href="#leadership">Leadership</a></li>
-        <li><a href="#partnership">Partnership</a></li>
+        <li><a href="#partnership">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#donate" class="nav-cta">Donate Now</a></li>
+        <li><a href="#donate" class="nav-cta">Support Parish</a></li>
       </ul>
     </div>
   </nav>
@@ -67,33 +2000,33 @@
         <div class="hero-text-col">
           <div class="hero-tag-row reveal">
             <div class="tag-mark"></div>
-            <span class="hero-eyebrow">AMA-TUALU FOUNDATION</span>
+            <span class="hero-eyebrow">ST MARY'S LAKE VIEW CATHOLIC PARISH</span>
           </div>
-          <p class="hero-welcome reveal" style="--delay: 0.05s">Welcome to a community where young leaders grow, learn, and lead together.</p>
+          <p class="hero-welcome reveal" style="--delay: 0.05s">A welcoming faith community in Lwampanga, Nakasongola.</p>
           <div class="title-stack reveal" style="--delay: 0.1s">
-            <h1 class="hero-headline">Together, we nurture young <em class="headline-gold">African leaders.</em></h1>
+            <h1 class="hero-headline">Rooted in faith, <em class="headline-gold">united in love.</em></h1>
           </div>
           <p class="hero-subtitle reveal" style="--delay: 0.25s">
-            A warm community in West Nile where youth gain confidence, skills, mentorship, and shared purpose — turning local experience into lasting impact.
+            Welcome to St Mary's Lake View Catholic Parish, Lwampanga. Together, we serve, pray, and grow in faith on the shores of Lake Kyoga, turning our devotion into lasting community impact.
           </p>
           <div class="hero-actions reveal" style="--delay: 0.35s">
-            <a href="#pillars" class="btn-primary">Join Our Journey <i class="fa-solid fa-arrow-right" style="font-size:0.8em;"></i></a>
+            <a href="#pillars" class="btn-primary">Our Ministries <i class="fa-solid fa-arrow-right" style="font-size:0.8em;"></i></a>
             <a href="#about" class="btn-ghost-hero">Our Story</a>
           </div>
           <div class="hero-stats reveal" style="--delay: 0.5s">
             <div class="h-stat">
-              <span class="h-stat-val">15–35</span>
-              <span class="h-stat-label">Youth Age Focus</span>
+              <span class="h-stat-val">Nakasongola</span>
+              <span class="h-stat-label">District</span>
             </div>
             <div class="h-stat-divider"></div>
             <div class="h-stat">
-              <span class="h-stat-val">5</span>
-              <span class="h-stat-label">Core Pillars</span>
+              <span class="h-stat-val">Lwampanga</span>
+              <span class="h-stat-label">Town Council</span>
             </div>
             <div class="h-stat-divider"></div>
             <div class="h-stat">
-              <span class="h-stat-val">West Nile</span>
-              <span class="h-stat-label">Region, Uganda</span>
+              <span class="h-stat-val">Budiebo</span>
+              <span class="h-stat-label">Constituency</span>
             </div>
           </div>
         </div>
@@ -110,11 +2043,11 @@
   <div class="mission-banner">
     <div class="ticker-wrap">
       <div class="ticker">
-        <span>Empower &bull;</span><span>Educate &bull;</span><span>Lead &bull;</span>
-        <span>Innovate &bull;</span><span>We Are Together &bull;</span><span>Inspire &bull;</span>
-        <span>Transform &bull;</span><span>Empower &bull;</span><span>Educate &bull;</span>
-        <span>Lead &bull;</span><span>Innovate &bull;</span><span>We Are Together &bull;</span>
-        <span>Inspire &bull;</span><span>Transform &bull;</span>
+        <span>Faith &bull;</span><span>Hope &bull;</span><span>Love &bull;</span>
+        <span>Sacraments &bull;</span><span>Prayer &bull;</span><span>Community &bull;</span>
+        <span>Service &bull;</span><span>Fellowship &bull;</span><span>Faith &bull;</span>
+        <span>Hope &bull;</span><span>Love &bull;</span><span>Sacraments &bull;</span>
+        <span>Prayer &bull;</span><span>Community &bull;</span>
       </div>
     </div>
   </div>
@@ -124,10 +2057,10 @@
     <div class="container about-grid">
       <div class="about-image-wrap reveal-left">
         <div class="about-img-block img-block-1">
-          <img src="assets/community-event-5.jpeg" alt="AMA-TUALU Community Activity" />
+          <img src="assets/community-event-5.jpeg" alt="Parish Community Activity" />
         </div>
         <div class="about-img-block img-block-2">
-          <img src="assets/community-event-3.jpeg" alt="Youth Engagement" />
+          <img src="assets/community-event-3.jpeg" alt="Parish Worship" />
         </div>
         <div class="about-corner-bracket"></div>
       </div>
@@ -137,28 +2070,28 @@
           <span class="section-tag-terra">Core Identity</span>
         </div>
         <h2 class="section-title">
-          Built on the belief that <em class="highlight-gold">personal experience</em> is your greatest asset.
+          A community built on <em class="highlight-gold">faith, hope,</em> and love in action.
         </h2>
         <div class="section-divider-line"></div>
         <p class="body-text">
-          AMA-TUALU FOUNDATION is dedicated to unlocking the limitless potential of the youth across Africa. We believe that with the right tools, mentorship, and opportunities, the next generation can solve complex challenges and drive sustainable growth in their communities.
+          St Mary's Lake View Catholic Parish, Lwampanga, is dedicated to nurturing spiritual growth and serving the pastoral and sacramental needs of our community. We believe that through prayer, active faith, and community development, we can walk together in the footsteps of Christ and make a lasting difference in Nakasongola District.
         </p>
         <p class="body-text">
-          Registered in Uganda and operating from the West Nile Region (Adjumani), we serve youth and young professionals aged 15–35 who seek personal development, financial independence, and community transformation through ethical, revelation-driven strategies.
+          Serving Lwampanga Town Council, Budiebo Constituency, Nakasongola District, and the surrounding areas, we offer a welcoming space for prayer, fellowship, and active participation in the Church's mission of charity, education, and development.
         </p>
         <div class="about-quote-card">
           <div class="quote-orb"></div>
           <div>
             <div class="quote-label-sm">Our Mission</div>
-            <p class="quote-body-text">"To empower young Africans to lead, innovate, and explore their full potential — turning wisdom into lasting wealth and community impact."</p>
+            <p class="quote-body-text">"To proclaim the Gospel of Jesus Christ, celebrate the holy sacraments, and serve our community through faith formation, spiritual mentorship, and charitable outreach."</p>
           </div>
         </div>
         <ul class="checklist">
-          <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> Revelation-meets-community strategies for ethical growth</li>
-          <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> Leadership, digital literacy & mentorship programmes</li>
-          <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> Operating from Adjumani, West Nile, with a global digital reach</li>
+          <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> Sacramental celebration, prayer groups, and liturgical worship</li>
+          <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> Faith education, Sunday school, and youth mentorship</li>
+          <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> Actively serving Nakasongola, Lwampanga, and outstations</li>
         </ul>
-        <a href="#pillars" class="btn-primary" style="margin-top: 1.5rem;">Explore Our Pillars <i class="fa-solid fa-arrow-right" style="font-size:0.8em;"></i></a>
+        <a href="#pillars" class="btn-primary" style="margin-top: 1.5rem;">Explore Our Ministries <i class="fa-solid fa-arrow-right" style="font-size:0.8em;"></i></a>
       </div>
     </div>
   </section>
@@ -171,67 +2104,67 @@
       <div class="section-header reveal">
         <div class="heading-tag-row">
           <div class="tag-mark"></div>
-          <span class="section-tag-gold">The Foundation Pillars</span>
+          <span class="section-tag-gold">Parish Core Ministries</span>
           <div class="tag-mark"></div>
         </div>
-        <h2 class="section-title light">Five pillars of <em class="accent-italic">community-driven</em> transformation</h2>
-        <p class="section-subtitle light">Each pillar is designed to convert potential into structured, impactful, and sustainable systems for our youth.</p>
+        <h2 class="section-title light">Five pillars of <em class="accent-italic">spiritual & community</em> growth</h2>
+        <p class="section-subtitle light">Our parish is organized into five pastoral ministries designed to nourish faith and build a supportive community for all.</p>
       </div>
       <div class="pillars-grid">
 
         <div class="pillar-card reveal-up" style="--delay: 0s">
           <div class="pillar-top-row">
-            <div class="pillar-icon-wrap"><i class="fa-solid fa-users-gear"></i></div>
+            <div class="pillar-icon-wrap"><i class="fa-solid fa-cross"></i></div>
             <span class="pillar-num">01</span>
           </div>
-          <h3 class="pillar-title">Youth Leadership</h3>
-          <p class="pillar-desc">Through immersive workshops, debate clubs, and leadership summits, we provide young individuals the platform to find their voice, build confidence, and take on active roles in society.</p>
-          <a href="#donate" class="pillar-link">Support Leadership <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="pillar-title">Liturgy & Sacraments</h3>
+          <p class="pillar-desc">Celebrating holy Mass, sacraments, and liturgical prayer. We support active spiritual life through choir, altar servers, and regular prayer group devotions.</p>
+          <a href="#donate" class="pillar-link">Support Liturgy <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="pillar-card reveal-up" style="--delay: 0.1s">
           <div class="pillar-top-row">
-            <div class="pillar-icon-wrap"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="pillar-icon-wrap"><i class="fa-solid fa-graduation-cap"></i></div>
             <span class="pillar-num">02</span>
           </div>
-          <h3 class="pillar-title">Digital Literacy</h3>
-          <p class="pillar-desc">We bridge the digital divide by providing access to computers, coding bootcamps, and modern software training — preparing our youth for the digital economy of tomorrow.</p>
-          <a href="#donate" class="pillar-link">Fund Tech Ed <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="pillar-title">Youth & Catechesis</h3>
+          <p class="pillar-desc">Nurturing the next generation in faith through Sunday school, sacrament preparation classes (Baptism, Holy Communion, Confirmation), and active youth fellowship.</p>
+          <a href="#donate" class="pillar-link">Fund Youth Ministry <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="pillar-card reveal-up" style="--delay: 0.2s">
           <div class="pillar-top-row">
-            <div class="pillar-icon-wrap"><i class="fa-solid fa-chalkboard-user"></i></div>
+            <div class="pillar-icon-wrap"><i class="fa-solid fa-hands-praying"></i></div>
             <span class="pillar-num">03</span>
           </div>
-          <h3 class="pillar-title">Mentorship</h3>
-          <p class="pillar-desc">Our network of seasoned professionals provides one-on-one executive coaching, career counseling, and academic support — helping youth navigate their educational and professional journeys.</p>
-          <a href="#contact" class="pillar-link">Become a Mentor <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="pillar-title">Pastoral Care</h3>
+          <p class="pillar-desc">Providing spiritual mentorship, counseling, family life support, and home visits for the sick and elderly in Lwampanga and surrounding outstations.</p>
+          <a href="#contact" class="pillar-link">Request Counsel <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="pillar-card reveal-up" style="--delay: 0.3s">
           <div class="pillar-top-row">
-            <div class="pillar-icon-wrap"><i class="fa-solid fa-hands-holding-child"></i></div>
+            <div class="pillar-icon-wrap"><i class="fa-solid fa-hand-holding-heart"></i></div>
             <span class="pillar-num">04</span>
           </div>
-          <h3 class="pillar-title">Community Impact</h3>
-          <p class="pillar-desc">From environmental clean-ups to financial literacy workshops in Adjumani, our community service programs build empathy, civic responsibility, and lasting social change in West Nile.</p>
-          <a href="#impact" class="pillar-link">See Our Impact <i class="fa-solid fa-arrow-right"></i></a>
+          <h3 class="pillar-title">Charity & Outreach</h3>
+          <p class="pillar-desc">Expressing faith through action: supporting vulnerable families, providing community welfare, and coordinating parish development projects in Nakasongola.</p>
+          <a href="#impact" class="pillar-link">See Our Work <i class="fa-solid fa-arrow-right"></i></a>
         </div>
 
         <div class="pillar-card pillar-card-wide reveal-up" style="--delay: 0.4s">
           <div class="pillar-wide-inner">
             <div class="pillar-wide-left">
               <div class="pillar-top-row">
-                <div class="pillar-icon-wrap"><i class="fa-solid fa-gift"></i></div>
+                <div class="pillar-icon-wrap"><i class="fa-solid fa-users"></i></div>
                 <span class="pillar-num">05</span>
               </div>
-              <h3 class="pillar-title">Membership & Community</h3>
-              <span class="pillar-badge">New</span>
+              <h3 class="pillar-title">Parish Registry</h3>
+              <span class="pillar-badge">Registry</span>
             </div>
             <div class="pillar-wide-right">
-              <p class="pillar-desc">A monthly curated programme giving members exclusive access to workshops, digital resources, strategy templates, and live mentorship sessions. Your growth, delivered and supported by a thriving community.</p>
-              <a href="#membership" class="pillar-link">Join the Community <i class="fa-solid fa-arrow-right"></i></a>
+              <p class="pillar-desc">A welcoming parish database where you can register as a member, request sacramental records, join local small Christian communities (SCCs), and stay updated on parish news and bulletins.</p>
+              <a href="#membership" class="pillar-link">Register Now <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -245,25 +2178,25 @@
     <div class="impact-bg-img"></div>
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag light">Our Impact</span>
-        <h2 class="section-title light">Transforming Lives in <em class="headline-gold">West Nile</em></h2>
-        <p class="section-subtitle light">Rooted in Adjumani, reaching beyond — with measurable results that speak for themselves.</p>
+        <span class="section-tag light">Parish Growth</span>
+        <h2 class="section-title light">Our Faith Community in <em class="headline-gold">Nakasongola</em></h2>
+        <p class="section-subtitle light">Rooted in Lwampanga, growing together in spiritual and community life.</p>
       </div>
       <div class="stats-grid">
         <div class="stat-card reveal-up" style="--delay: 0s">
-          <span class="stat-counter" data-target="50">0</span><span class="stat-suffix">+</span>
-          <p class="stat-desc">Students Mentored</p>
+          <span class="stat-counter" data-target="800">0</span><span class="stat-suffix">+</span>
+          <p class="stat-desc">Active Parishioners</p>
         </div>
         <div class="stat-card reveal-up" style="--delay: 0.15s">
-          <span class="stat-counter" data-target="15">0</span><span class="stat-suffix">+</span>
-          <p class="stat-desc">Community Projects</p>
+          <span class="stat-counter" data-target="6">0</span><span class="stat-suffix"></span>
+          <p class="stat-desc">Outstations & Centres</p>
         </div>
         <div class="stat-card reveal-up" style="--delay: 0.3s">
-          <span class="stat-counter" data-target="8">0</span><span class="stat-suffix"></span>
-          <p class="stat-desc">Schools Reached</p>
+          <span class="stat-counter" data-target="12">0</span><span class="stat-suffix"></span>
+          <p class="stat-desc">Catechists & Leaders</p>
         </div>
         <div class="stat-card reveal-up" style="--delay: 0.45s">
-          <span class="stat-counter" data-target="25">0</span><span class="stat-suffix"></span>
+          <span class="stat-counter" data-target="40">0</span><span class="stat-suffix">+</span>
           <p class="stat-desc">Active Volunteers</p>
         </div>
       </div>
@@ -343,26 +2276,26 @@
   <section class="merch section" id="heritage" style="background: var(--clr-charcoal);">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag" style="color: var(--clr-amber);">Shop for a Cause</span>
-        <h2 class="section-title" style="color: #fff;">Preserve African Heritage</h2>
-        <p class="section-subtitle" style="color: rgba(255,255,255,0.65);">AMA-TUALU FOUNDATION merchandise. All proceeds go to empowering our youth.</p>
+        <span class="section-tag" style="color: var(--clr-amber);">Parish Shop</span>
+        <h2 class="section-title" style="color: #fff;">Parish Devotional Items</h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.65);">Support St Mary's Lake View Parish through our devotional items. All proceeds support outstations and local catechists.</p>
       </div>
       <div class="merch-grid">
         <div class="merch-card reveal-up" style="--delay: 0s">
-          <div class="gallery-img"><img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&q=80" alt="Heritage Mug" loading="lazy" /></div>
-          <div class="merch-info"><h4>Heritage Mug</h4><a href="#donate" class="btn-amber-sm">$15 — Shop Now</a></div>
+          <div class="gallery-img"><img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=500&q=80" alt="Holy Rosary" loading="lazy" /></div>
+          <div class="merch-info"><h4>Holy Rosary</h4><a href="#donate" class="btn-amber-sm">$15 — Get Rosary</a></div>
         </div>
         <div class="merch-card reveal-up" style="--delay: 0.1s">
-          <div class="gallery-img"><img src="https://images.unsplash.com/photo-1572288345749-002f2ab2f9a2?w=500&q=80" alt="Rise Mug" loading="lazy" /></div>
-          <div class="merch-info"><h4>Foundation Shirt</h4><a href="#donate" class="btn-amber-sm">$25 — Shop Now</a></div>
+          <div class="gallery-img"><img src="https://images.unsplash.com/photo-1572288345749-002f2ab2f9a2?w=500&q=80" alt="Parish T-Shirt" loading="lazy" /></div>
+          <div class="merch-info"><h4>Parish Custom T-Shirt</h4><a href="#donate" class="btn-amber-sm">$25 — Get Shirt</a></div>
         </div>
         <div class="merch-card reveal-up" style="--delay: 0.2s">
-          <div class="gallery-img"><img src="https://images.unsplash.com/photo-1574545308693-5471a8f9c158?w=500&q=80" alt="Roots Cup" loading="lazy" /></div>
-          <div class="merch-info"><h4>Roots Cup</h4><a href="#donate" class="btn-amber-sm">$15 — Shop Now</a></div>
+          <div class="gallery-img"><img src="https://images.unsplash.com/photo-1574545308693-5471a8f9c158?w=500&q=80" alt="Prayer Book" loading="lazy" /></div>
+          <div class="merch-info"><h4>Catholic Prayer Book</h4><a href="#donate" class="btn-amber-sm">$15 — Get Book</a></div>
         </div>
         <div class="merch-card reveal-up" style="--delay: 0.3s">
-          <div class="gallery-img"><img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=500&q=80" alt="Africa Travel Mug" loading="lazy" /></div>
-          <div class="merch-info"><h4>Africa Travel Mug</h4><a href="#donate" class="btn-amber-sm">$20 — Shop Now</a></div>
+          <div class="gallery-img"><img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=500&q=80" alt="Parish Travel Mug" loading="lazy" /></div>
+          <div class="merch-info"><h4>Parish Travel Mug</h4><a href="#donate" class="btn-amber-sm">$20 — Get Mug</a></div>
         </div>
       </div>
     </div>
@@ -374,122 +2307,121 @@
       <div class="section-header reveal">
         <div class="heading-tag-row justify-center">
           <div class="tag-mark-navy"></div>
-          <span class="section-tag-navy">Governance & Leadership</span>
+          <span class="section-tag-navy">Parish Leadership & Council</span>
           <div class="tag-mark-navy"></div>
         </div>
-        <h2 class="section-title">Led with <em class="highlight-gold">purpose</em></h2>
-        <p class="section-subtitle">Our Board of Directors and Executive Management are committed to transparency, accountability, and the transformative vision of AMA-TUALU FOUNDATION.</p>
+        <h2 class="section-title">Serving with <em class="highlight-gold">pastoral care</em></h2>
+        <p class="section-subtitle">Our clergy, catechists, and parish council leaders are committed to spiritual guidance, transparency, and the community mission of St Mary's Lake View Parish.</p>
       </div>
 
-      <!-- CEO Feature -->
+      <!-- Clergy Feature -->
       <div class="ceo-card reveal-up">
-        <div class="ceo-img-wrap">
-          <img src="assets/Ababiku-Brenda.png" alt="Ababiku Brenda — CEO &amp; Founder" class="ceo-photo" />
+        <div class="ceo-img-wrap" style="background: linear-gradient(135deg, var(--clr-forest), var(--clr-navy-dark));">
+          <div style="width:100%; height:100%; min-height: 300px; display:flex; align-items:center; justify-content:center; color:var(--clr-amber); font-size:5rem;">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
         </div>
         <div class="ceo-text">
-          <span class="section-tag-terra">Founder & Chief Executive Officer</span>
-          <h3 class="ceo-name">Ababiku Brenda</h3>
+          <span class="section-tag-terra">Clergy & Spiritual Father</span>
+          <h3 class="ceo-name">Rev. Fr. Parish Priest</h3>
           <div class="section-divider-line"></div>
-          <p class="body-text">A visionary leader from the West Nile Region, Brenda founded AMA-TUALU FOUNDATION on the principle that wisdom and community — not just labor — are the true source of lasting wealth. Under her leadership, the foundation has grown into a multi-pillar organisation targeting USD 400,000 in Year 2 revenue, with partnerships spanning Nordic diplomatic networks and global grant institutions.</p>
-          <a href="https://www.linkedin.com/in/ababiku-brenda-b14397392" target="_blank" rel="noopener" class="board-linkedin-btn" style="margin-top: 0.5rem; margin-bottom: 0.5rem;"><i class="fa-brands fa-linkedin"></i> View LinkedIn</a>
+          <p class="body-text">Serving as the spiritual shepherd of St Mary's Lake View Catholic Parish, the Parish Priest leads our sacramental celebrations, guides the pastoral council, and oversees the spiritual welfare and development of all outstations and parishioners in Lwampanga.</p>
           <div class="ceo-tags">
-            <span class="ceo-tag">Adjumani, Uganda</span>
-            <span class="ceo-tag">NLLC Registered</span>
-            <span class="ceo-tag">40% Equity Founder</span>
+            <span class="ceo-tag">Nakasongola, Uganda</span>
+            <span class="ceo-tag">Spiritual Leadership</span>
+            <span class="ceo-tag">Lwampanga Parish</span>
           </div>
         </div>
       </div>
 
-      <!-- Board Grid -->
+      <!-- Council Grid -->
       <div class="board-grid">
         <div class="board-card reveal-up" style="--delay: 0s">
-          <div class="board-img-wrap"><img src="assets/Rwothomio-Evans-E.png" alt="Rwothomio Evans .E." class="board-photo" /></div>
-          <h3 class="board-name">Rwothomio Evans .E.</h3>
-          <h4 class="board-role">Vice Chairperson</h4>
-          <p class="board-dept">Leadership & Governance</p>
-          <p class="board-desc">Leads board functions and ensures constitutional adherence; represents the CEO in governance forums.</p>
-          <a href="https://www.linkedin.com/in/rwothomio-evans-e-7948ab398" target="_blank" rel="noopener" class="board-linkedin-btn"><i class="fa-brands fa-linkedin"></i> View LinkedIn</a>
+          <div class="board-img-wrap" style="background: linear-gradient(135deg, var(--clr-forest), var(--clr-navy-dark)); height: 250px; display: flex; align-items: center; justify-content: center; color: var(--clr-amber); font-size: 3.5rem;">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h3 class="board-name">Rev. Fr. Assistant Priest</h3>
+          <h4 class="board-role">Curate / Assistant</h4>
+          <p class="board-dept">Clergy & Liturgy</p>
+          <p class="board-desc">Assists in administering sacraments, celebrating holy Mass, and directing parish devotions and outstation outreach.</p>
         </div>
         <div class="board-card reveal-up" style="--delay: 0.08s">
-          <div class="board-img-wrap"><img src="assets/Niwasiima-Ashelycole.png" alt="Niwasiima Ashelycole" class="board-photo" /></div>
-          <h3 class="board-name">Niwasiima Ashelycole</h3>
-          <h4 class="board-role">Chief Operating Officer</h4>
-          <p class="board-dept">Operations</p>
-          <p class="board-desc">Ensures all departments meet targets; translates strategy into daily operational reality across the foundation.</p>
-          <a href="https://www.linkedin.com/in/niwasiima-ashelycole-091698390" target="_blank" rel="noopener" class="board-linkedin-btn"><i class="fa-brands fa-linkedin"></i> View LinkedIn</a>
+          <div class="board-img-wrap" style="background: linear-gradient(135deg, var(--clr-forest), var(--clr-navy-dark)); height: 250px; display: flex; align-items: center; justify-content: center; color: var(--clr-amber); font-size: 3.5rem;">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h3 class="board-name">Parish Council Chairperson</h3>
+          <h4 class="board-role">Council Leader</h4>
+          <p class="board-dept">Administration</p>
+          <p class="board-desc">Leads the parish pastoral council, ensuring coordinated efforts in church administration, building, and social affairs.</p>
         </div>
         <div class="board-card reveal-up" style="--delay: 0.16s">
-          <div class="board-img-wrap"><img src="assets/Natozo-Patience-Martha.png" alt="Natozo Patience Martha" class="board-photo" /></div>
-          <h3 class="board-name">Natozo Patience Martha</h3>
-          <h4 class="board-role">General Secretary</h4>
-          <p class="board-dept">Records & Legal</p>
-          <p class="board-desc">Custodian of the Foundation's memory; manages minutes, legal documentation, and official correspondence.</p>
-          <a href="https://www.linkedin.com/in/martha-natozo-bba5ab395" target="_blank" rel="noopener" class="board-linkedin-btn"><i class="fa-brands fa-linkedin"></i> View LinkedIn</a>
+          <div class="board-img-wrap" style="background: linear-gradient(135deg, var(--clr-forest), var(--clr-navy-dark)); height: 250px; display: flex; align-items: center; justify-content: center; color: var(--clr-amber); font-size: 3.5rem;">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h3 class="board-name">Head Catechist</h3>
+          <h4 class="board-role">Director of Catechesis</h4>
+          <p class="board-dept">Faith Formation</p>
+          <p class="board-desc">Oversees Sunday school, sacramental classes, and guides local outstation catechists in instructing the faithful.</p>
         </div>
         <div class="board-card reveal-up" style="--delay: 0.24s">
-          <div class="board-img-wrap"><img src="assets/Egabo-Aaron.png" alt="Egabo Aaron" class="board-photo" /></div>
-          <h3 class="board-name">Egabo Aaron</h3>
-          <h4 class="board-role">Head of Field Operations</h4>
-          <p class="board-dept">Adjumani & West Nile</p>
-          <p class="board-desc">Leads delivery of all on-the-ground programmes in Adjumani and West Nile while also directing the foundation's outreach, branding, and stakeholder communications strategy to ensure clear, consistent messaging across all field operations.</p>
-          <a href="https://www.linkedin.com/in/egaboaaron" target="_blank" rel="noopener" class="board-linkedin-btn"><i class="fa-brands fa-linkedin"></i> View LinkedIn</a>
+          <div class="board-img-wrap" style="background: linear-gradient(135deg, var(--clr-forest), var(--clr-navy-dark)); height: 250px; display: flex; align-items: center; justify-content: center; color: var(--clr-amber); font-size: 3.5rem;">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h3 class="board-name">Head of Laity</h3>
+          <h4 class="board-role">Laity Representative</h4>
+          <p class="board-dept">Laity & Outreach</p>
+          <p class="board-desc">Represents the parish lay faithful, promoting active participation in liturgy, small communities, and charity work.</p>
         </div>
         <div class="board-card reveal-up" style="--delay: 0.32s">
-          <div class="board-img-wrap"><img src="assets/Onyango-John-Steven.png" alt="Onyango John Steven" class="board-photo" /></div>
-          <h3 class="board-name">Onyango John Steven</h3>
-          <h4 class="board-role">Programs Manager</h4>
-          <p class="board-dept">Curriculum & Impact</p>
-          <p class="board-desc">Curator of the Foundation's service portfolio; ensures workshop quality and measurable community impact.</p>
-          <a href="https://www.linkedin.com/in/john-steven-onyango-9794a1376" target="_blank" rel="noopener" class="board-linkedin-btn"><i class="fa-brands fa-linkedin"></i> View LinkedIn</a>
+          <div class="board-img-wrap" style="background: linear-gradient(135deg, var(--clr-forest), var(--clr-navy-dark)); height: 250px; display: flex; align-items: center; justify-content: center; color: var(--clr-amber); font-size: 3.5rem;">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h3 class="board-name">Finance Committee Chairperson</h3>
+          <h4 class="board-role">Finance Chair</h4>
+          <p class="board-dept">Finance & Projects</p>
+          <p class="board-desc">Manages parish collections, tithes, budgeting, and financial reports for transparency and development.</p>
         </div>
         <div class="board-card reveal-up" style="--delay: 0.40s">
-          <div class="board-img-wrap"><img src="assets/Alimpa-Anne-Hillary.png" alt="Alimpa Anne Hillary" class="board-photo" /></div>
-          <h3 class="board-name">Alimpa Anne Hillary</h3>
-          <h4 class="board-role">Finance Manager</h4>
-          <p class="board-dept">Finance & Audit</p>
-          <p class="board-desc">Manages budgeting, payroll, and annual audits in alignment with the Foundation's financial constitution.</p>
-          <a href="https://www.linkedin.com/in/alimpa-hillary-9ab7b53b8" target="_blank" rel="noopener" class="board-linkedin-btn"><i class="fa-brands fa-linkedin"></i> View LinkedIn</a>
-        </div>
-        <div class="board-card reveal-up" style="--delay: 0.48s">
-          <div class="board-img-wrap"><img src="assets/Ausi-Mulo.png" alt="Ausi Mulo" class="board-photo" /></div>
-          <h3 class="board-name">Ausi Mulo</h3>
-          <h4 class="board-role">Head of Community & Impact</h4>
-          <p class="board-dept">Outreach & Strategy</p>
-          <p class="board-desc">Chief outreach officer; designs systems to track long-term transformation of beneficiaries across the region.</p>
-          <a href="https://linkedin.com/in/ausi-mulo-343461210" target="_blank" rel="noopener" class="board-linkedin-btn"><i class="fa-brands fa-linkedin"></i> View LinkedIn</a>
+          <div class="board-img-wrap" style="background: linear-gradient(135deg, var(--clr-forest), var(--clr-navy-dark)); height: 250px; display: flex; align-items: center; justify-content: center; color: var(--clr-amber); font-size: 3.5rem;">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h3 class="board-name">Youth Ministry Coordinator</h3>
+          <h4 class="board-role">Youth Leader</h4>
+          <p class="board-dept">Youth & Fellowship</p>
+          <p class="board-desc">Coordinates youth programs, sports, choir engagement, and retreats, keeping young people active in their faith.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== NORDIC PARTNERSHIP ===================== -->
+  <!-- ===================== PARISH PROJECTS ===================== -->
   <section class="partnership section" id="partnership">
     <div class="partner-orb"></div>
     <div class="container partner-flex">
       <div class="partner-text reveal-left">
         <div class="about-tag-row">
           <div class="tag-mark"></div>
-          <span class="section-tag-gold">Strategic Partnership</span>
+          <span class="section-tag-gold">Parish Development & Projects</span>
         </div>
-        <h2 class="partner-title">Nordic-Uganda <br /><em class="accent-italic">Partnership Day</em></h2>
+        <h2 class="partner-title">Building our <br /><em class="accent-italic">parish community</em></h2>
         <div class="partner-badges">
-          <span class="partner-badge-light">May 28, 2026</span>
-          <span class="partner-badge-light">Youth & Culture</span>
-          <span class="partner-badge-gold">Nominated</span>
+          <span class="partner-badge-light">Lwampanga</span>
+          <span class="partner-badge-light">Nakasongola</span>
+          <span class="partner-badge-gold">Parish Fund</span>
         </div>
-        <p class="body-text">Co-organized by the Royal Danish Embassy, the Embassy of Iceland, and the Embassy of Sweden in Uganda, this diplomatic forum brings together key stakeholders to strengthen Nordic-Ugandan partnerships through youth engagement and cultural exchange.</p>
+        <p class="body-text">St Mary's Lake View Catholic Parish is embarking on key development and building projects to expand our main church building, support local outstation construction, and fund community initiatives like schooling support and clean water access.</p>
         <div class="why-list">
-          <h4 class="why-heading">Why AMA-TUALU Was Nominated:</h4>
-          <div class="why-item"><div class="why-dot"></div><span>Target demographic (15–35) perfectly matches the "Youth" focus</span></div>
-          <div class="why-item"><div class="why-dot"></div><span>Based in West Nile Region (Adjumani) — a key development area</span></div>
-          <div class="why-item"><div class="why-dot"></div><span>Works at the intersection of cultural transformation and economic empowerment</span></div>
-          <div class="why-item"><div class="why-dot"></div><span>Represents the "implementers" Nordic embassies seek to engage</span></div>
+          <h4 class="why-heading">Current Priority Projects:</h4>
+          <div class="why-item"><div class="why-dot"></div><span>Expanding the main parish church seating capacity</span></div>
+          <div class="why-item"><div class="why-dot"></div><span>Renovating school facilities for local parish primary schools</span></div>
+          <div class="why-item"><div class="why-dot"></div><span>Providing scholarships/school fees support for needy children</span></div>
+          <div class="why-item"><div class="why-dot"></div><span>Purchasing equipment for local outstation catechists</span></div>
         </div>
-        <a href="#contact" class="btn-primary" style="margin-top: 2rem;">Become a Partner <i class="fa-solid fa-arrow-right" style="font-size:0.8em;"></i></a>
+        <a href="#contact" class="btn-primary" style="margin-top: 2rem;">Support Projects <i class="fa-solid fa-arrow-right" style="font-size:0.8em;"></i></a>
       </div>
       <div class="partner-visual reveal-right">
         <div class="partner-img-frame">
-          <img src="assets/community-event-3.jpeg" alt="Partnership Forum" class="partner-photo" />
+          <img src="assets/community-event-3.jpeg" alt="Parish Development" class="partner-photo" />
           <div class="partner-img-overlay"></div>
         </div>
 
@@ -497,31 +2429,31 @@
     </div>
   </section>
 
-  <!-- ===================== MEMBERSHIP / WISDOM BOX ===================== -->
+  <!-- ===================== PARISH REGISTRY ===================== -->
   <section class="membership section" id="membership">
     <div class="container membership-grid">
       <div class="wisdom-box-col reveal-left">
         <div class="wisdom-card">
           <div class="wisdom-card-header">
-            <img src="assets/Ama-Tualu-Logo-Symbol.png" alt="Symbol" style="height: 44px; width: auto;" />
-            <span class="wisdom-label">The Wisdom Box</span>
+            <i class="fa-solid fa-church" style="font-size: 1.8rem; color: var(--clr-amber);"></i>
+            <span class="wisdom-label">Parish Services</span>
           </div>
           <div class="wisdom-items">
             <div class="wisdom-item">
-              <div class="wisdom-icon-terra"><i class="fa-solid fa-book-open"></i></div>
-              <div><div class="wisdom-item-title">Curated Workshop</div><div class="card-meta">This month's featured topic</div></div>
+              <div class="wisdom-icon-terra"><i class="fa-solid fa-cross"></i></div>
+              <div><div class="wisdom-item-title">Holy Sacraments</div><div class="card-meta">Baptism, Eucharist, Matrimony</div></div>
             </div>
             <div class="wisdom-item">
-              <div class="wisdom-icon-gold"><i class="fa-solid fa-video"></i></div>
-              <div><div class="wisdom-item-title">Strategy Session</div><div class="card-meta">Live coaching recording</div></div>
+              <div class="wisdom-icon-gold"><i class="fa-solid fa-calendar-days"></i></div>
+              <div><div class="wisdom-item-title">Liturgy Times</div><div class="card-meta">Sunday Mass: 7:00 AM & 9:30 AM</div></div>
             </div>
             <div class="wisdom-item">
-              <div class="wisdom-icon-navy"><i class="fa-solid fa-file-lines"></i></div>
-              <div><div class="wisdom-item-title">Leadership Template</div><div class="card-meta">Plug-and-play framework</div></div>
+              <div class="wisdom-icon-navy"><i class="fa-solid fa-book-bible"></i></div>
+              <div><div class="wisdom-item-title">Catechesis & Formation</div><div class="card-meta">Saturday Sacrament classes</div></div>
             </div>
             <div class="wisdom-item">
-              <div class="wisdom-icon-terra"><i class="fa-brands fa-whatsapp"></i></div>
-              <div><div class="wisdom-item-title">Community Access</div><div class="card-meta">Private WhatsApp & Zoom</div></div>
+              <div class="wisdom-icon-terra"><i class="fa-solid fa-users-line"></i></div>
+              <div><div class="wisdom-item-title">Small Communities</div><div class="card-meta">Weekly home prayer fellowships</div></div>
             </div>
           </div>
         </div>
@@ -530,17 +2462,17 @@
       <div class="membership-text reveal-right">
         <div class="about-tag-row">
           <div class="tag-mark"></div>
-          <span class="section-tag-gold">Monthly Membership</span>
+          <span class="section-tag-gold">Parish Registry</span>
         </div>
-        <h2 class="section-title">The Wisdom Box — <em class="highlight-gold">curated growth</em> delivered monthly</h2>
-        <p class="body-text">Every month, members receive a curated digital package: a workshop resource, a recorded strategy session, plug-and-play leadership templates, and exclusive access to our private coaching community on WhatsApp and Zoom.</p>
+        <h2 class="section-title">Join our St. Mary's <em class="highlight-gold">parish family</em></h2>
+        <p class="body-text">We invite all Catholic faithful and families residing within Lwampanga Town Council and Nakasongola District to register in our parish. Registration helps us serve you better in pastoral duties, administration of sacraments, and parish fellowship.</p>
         <ul class="feature-list">
-          <li><i class="fa-solid fa-circle-check feature-icon"></i> One curated workshop resource per month from our programme library</li>
-          <li><i class="fa-solid fa-circle-check feature-icon"></i> Live strategy session recordings with executive coaches</li>
-          <li><i class="fa-solid fa-circle-check feature-icon"></i> Leadership system templates you can deploy immediately</li>
-          <li><i class="fa-solid fa-circle-check feature-icon"></i> Private community access — real mentors, real growth</li>
+          <li><i class="fa-solid fa-circle-check feature-icon"></i> Full listing in our parish database for sacramental records</li>
+          <li><i class="fa-solid fa-circle-check feature-icon"></i> Support during family sacraments, weddings, and sick calls</li>
+          <li><i class="fa-solid fa-circle-check feature-icon"></i> Connection with a Small Christian Community (SCC) in your neighborhood</li>
+          <li><i class="fa-solid fa-circle-check feature-icon"></i> Participation in parish general meetings and voting in council elections</li>
         </ul>
-        <a href="#donate" class="btn-primary" style="margin-top: 1.5rem;">Join the Community <i class="fa-solid fa-arrow-right" style="font-size:0.8em;"></i></a>
+        <a href="#contact" class="btn-primary" style="margin-top: 1.5rem;">Register as a Parishioner <i class="fa-solid fa-arrow-right" style="font-size:0.8em;"></i></a>
       </div>
     </div>
   </section>
@@ -549,25 +2481,25 @@
   <section class="donate section" id="donate">
     <div class="container donate-grid">
       <div class="donate-text reveal-left">
-        <span class="section-tag">Take Action</span>
-        <h2 class="section-title">Donation<br />Packages.</h2>
-        <p class="body-text">Your support helps us provide essential resources, education, and mentorship to young people across West Nile. Choose a giving level to make an immediate impact.</p>
+        <span class="section-tag">Parish Offerings</span>
+        <h2 class="section-title">Support Our<br />Ministries.</h2>
+        <p class="body-text">Your tithing, offertory, and development donations help us maintain the parish, support our outstations, fund liturgical items, and execute local charity programs.</p>
         <div class="impact-list">
           <div class="impact-item">
-            <span class="impact-amount">$25</span>
-            <span class="impact-desc">Provides school supplies for one student</span>
+            <span class="impact-amount">$15</span>
+            <span class="impact-desc">Helps fund sacramental study materials for children</span>
           </div>
           <div class="impact-item">
-            <span class="impact-amount">$100</span>
-            <span class="impact-desc">Funds a digital literacy workshop for 10 youth</span>
+            <span class="impact-amount">$50</span>
+            <span class="impact-desc">Contributes to outstation development projects</span>
+          </div>
+          <div class="impact-item">
+            <span class="impact-amount">$200</span>
+            <span class="impact-desc">Sponsors welfare packages for 5 vulnerable families</span>
           </div>
           <div class="impact-item">
             <span class="impact-amount">$500</span>
-            <span class="impact-desc">Sponsors a full-year mentorship programme</span>
-          </div>
-          <div class="impact-item">
-            <span class="impact-amount">$25K</span>
-            <span class="impact-desc">Initial launch capital target (30% grant-funded)</span>
+            <span class="impact-desc">Contributes to the main church expansion building fund</span>
           </div>
         </div>
       </div>
@@ -609,17 +2541,17 @@
     <div class="container row">
       <div class="contact-form-container reveal-up">
         <h2 class="section-title">Contact <em class="highlight-gold">Us</em></h2>
-        <p class="section-subtitle">Interested in volunteering, partnering, or learning more? Send us a message.</p>
+        <p class="section-subtitle">Interested in sacramental registration, support, or learning more? Send us a message.</p>
         <form id="contactForm" class="contact-form">
           <div class="form-group"><input type="text" id="name" name="name" placeholder="Your Name" required /></div>
           <div class="form-group"><input type="email" id="email" name="email" placeholder="Email Address" required /></div>
           <div class="form-group">
             <select id="subject" name="subject" required>
               <option value="" disabled selected>Inquiry Type</option>
-              <option value="volunteer">Volunteer Opportunity</option>
-              <option value="donation">Donation Question</option>
-              <option value="partner">Partnership Inquiry</option>
-              <option value="membership">Membership Information</option>
+              <option value="registry">Parish Registration</option>
+              <option value="sacraments">Sacramental Preparation</option>
+              <option value="donation">Donation & Tithes</option>
+              <option value="support">Request Pastoral Counsel</option>
               <option value="general">General Message</option>
             </select>
           </div>
@@ -631,30 +2563,33 @@
         <div class="info-block">
           <h3>Visit <em>Us</em></h3>
           <ul class="location-details" style="margin-bottom:1.2rem">
-            <li><i class="fa-solid fa-location-dot"></i> AMA-TUALU FOUNDATION HQ, Adjumani, Uganda</li>
-            <li><i class="fa-solid fa-clock"></i> Mon – Fri: 9:00 AM – 5:00 PM (EAT)</li>
+            <li><i class="fa-solid fa-location-dot"></i> St Mary's Lake View Parish, Lwampanga Town Council, Budiebo Constituency, Nakasongola District, Uganda</li>
+            <li><i class="fa-solid fa-clock"></i> Sun: Masses at 7:00 AM & 9:30 AM | Mon-Sat Office: 9AM-4PM</li>
           </ul>
         </div>
         <div class="info-block">
           <h3>Call <em>Us</em></h3>
-          <p>For urgent matters or direct inquiries.</p>
-          <a href="tel:+256794290948" class="emergency-link">
-            <i class="fa-solid fa-phone-volume"></i> +256 794 290 948
+          <p>For urgent pastoral matters, sick calls, or direct inquiries.</p>
+          <a href="tel:+256754184957" class="emergency-link" style="margin-bottom:0.5rem; display:block; width:fit-content;">
+            <i class="fa-solid fa-phone-volume"></i> +256 754 184 957
+          </a>
+          <a href="tel:+256788218619" class="emergency-link" style="display:block; width:fit-content;">
+            <i class="fa-solid fa-phone-volume"></i> +256 788 218 619
           </a>
         </div>
         <div class="info-block">
           <h3>Email <em>Us</em></h3>
           <p>We respond to all enquiries within 24 hours.</p>
-          <a href="mailto:info@amatualu.org" class="emergency-link" style="font-size:1.05rem;">
-            <i class="fa-solid fa-envelope"></i> info@amatualu.org
+          <a href="mailto:info@stmaryslwampanga.org" class="emergency-link" style="font-size:1.05rem;">
+            <i class="fa-solid fa-envelope"></i> info@stmaryslwampanga.org
           </a>
         </div>
         <div class="info-block">
-          <h3>Financial <em>Targets</em></h3>
+          <h3>Parish <em>Councils</em></h3>
           <ul class="location-details">
-            <li><i class="fa-solid fa-circle-dollar-to-slot" style="color: var(--clr-amber);"></i> Year 1 Revenue Target: USD 150,000</li>
-            <li><i class="fa-solid fa-circle-dollar-to-slot" style="color: var(--clr-amber);"></i> Year 2 Revenue Target: USD 400,000</li>
-            <li><i class="fa-solid fa-seedling" style="color: var(--clr-sage);"></i> Launch Capital: USD 25,000</li>
+            <li><i class="fa-solid fa-church" style="color: var(--clr-amber);"></i> Main Parish Church: Lwampanga</li>
+            <li><i class="fa-solid fa-network-wired" style="color: var(--clr-amber);"></i> Active Outstations: 6 Centres</li>
+            <li><i class="fa-solid fa-users" style="color: var(--clr-sage);"></i> 12 Small Christian Communities (SCCs)</li>
           </ul>
         </div>
       </div>
@@ -665,50 +2600,47 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="#home" class="logo">
-          <img src="assets/Ama-Tualu-Logo.png" alt="Ama-Tualu Foundation Logo" style="height: 60px; width: auto; margin-bottom: 1rem;" />
+        <a href="#home" class="logo-text" style="font-family: var(--ff-display); font-weight: 700; color: var(--clr-warm-white); display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+          <i class="fa-solid fa-church" style="color: var(--clr-amber); font-size: 1.4rem;"></i>
+          <span style="display: flex; flex-direction: column; line-height: 1.1; text-align: left;">
+            <span style="font-size: 1.15rem; font-weight: 800; color: #fff;">ST. MARY'S LAKE VIEW</span>
+            <span style="font-size: 0.72rem; letter-spacing: 0.12em; font-family: var(--ff-ui); font-weight: 600; color: var(--clr-amber);">CATHOLIC PARISH - LWAMPANGA</span>
+          </span>
         </a>
-        <p>Empowering young Africans in West Nile, Uganda to lead, innovate, and explore their full potential. Building a brighter tomorrow, together.</p>
-        <p style="font-style: italic; color: var(--clr-amber); margin-top: 0.75rem; font-size: 0.9rem;">"We Are Together"</p>
-        <div class="social-links">
-          <a href="#" aria-label="Facebook" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="Twitter" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://www.linkedin.com/company/ama-tualu-foundation-ltd/" aria-label="LinkedIn" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
+        <p>Welcoming all Catholic faithful in Lwampanga Town Council and Nakasongola District. Growing in faith, sacraments, and outreach, together under the patronage of Mother Mary.</p>
+        <p style="font-style: italic; color: var(--clr-amber); margin-top: 0.75rem; font-size: 0.9rem;">"Faith, Hope, and Love in Action"</p>
       </div>
       <div class="footer-col">
-        <h4>Pillars</h4>
+        <h4>Ministries</h4>
         <ul>
-          <li><a href="#pillars">Youth Leadership</a></li>
-          <li><a href="#pillars">Digital Literacy</a></li>
-          <li><a href="#pillars">Mentorship</a></li>
-          <li><a href="#pillars">Community Impact</a></li>
-          <li><a href="#membership">Membership</a></li>
+          <li><a href="#pillars">Liturgy & Sacraments</a></li>
+          <li><a href="#pillars">Youth & Catechesis</a></li>
+          <li><a href="#pillars">Pastoral Care</a></li>
+          <li><a href="#pillars">Charity & Outreach</a></li>
+          <li><a href="#membership">Parish Registry</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Get Involved</h4>
         <ul>
-          <li><a href="#donate">Donate</a></li>
-          <li><a href="#contact">Volunteer</a></li>
-          <li><a href="#partnership">Partner With Us</a></li>
-          <li><a href="#membership">Join Membership</a></li>
-          <li><a href="#heritage">Merchandise</a></li>
+          <li><a href="#donate">Tithing & Offerings</a></li>
+          <li><a href="#contact">Outreach Volunteer</a></li>
+          <li><a href="#partnership">Support Parish Projects</a></li>
+          <li><a href="#membership">Parish Registration</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:avashalomcornerstone@gmail.com">avashalomcornerstone@gmail.com</a></li>
-          <li><a href="tel:+256794290948">+256 794 290 948</a></li>
-          <li>Adjumani, West Nile, Uganda</li>
-          <li>Mon–Fri: 9AM–5PM EAT</li>
+          <li><a href="mailto:info@stmaryslwampanga.org">info@stmaryslwampanga.org</a></li>
+          <li><a href="tel:+256754184957">+256 754 184 957</a></li>
+          <li><a href="tel:+256788218619">+256 788 218 619</a></li>
+          <li>Lwampanga, Nakasongola, Uganda</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 AMA-TUALU FOUNDATION. All rights reserved. | Registered NLLC, Uganda</p>
+      <p>&copy; 2026 ST MARY'S LAKE VIEW CATHOLIC PARISH-LWAMPANGA. All rights reserved.</p>
     </div>
   </footer>
 
@@ -717,7 +2649,7 @@
     <div class="modal-box">
       <div class="modal-icon">&#10003;</div>
       <h3>Thank You!</h3>
-      <p>Your generous donation has been received. You are making a real difference in the lives of our youth in West Nile, Uganda.</p>
+      <p>Your generous offering has been received. You are making a real difference in the mission of our parish and community in Nakasongola, Uganda.</p>
       <button class="btn-primary" id="modalClose">Close</button>
     </div>
   </div>

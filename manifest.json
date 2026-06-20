@@ -8,7 +8,7 @@
   "theme_color": "#1E3550",
   "icons": [
     {
-      "src": "assets/Ama-Tualu-Logo-Symbol.png",
+      "src": "assets/st-mary-logo-symbol.png",
       "sizes": "192x192 512x512",
       "type": "image/png",
       "purpose": "any maskable"

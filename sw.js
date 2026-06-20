@@ -1,12 +1,11 @@
-const CACHE_NAME = 'st-marys-cache-v1';
+const CACHE_NAME = 'st-marys-cache-v2';
 const urlsToCache = [
   '/',
   '/index.html',
   '/style.css',
   '/main.js',
   '/manifest.json',
-  '/assets/Ama-Tualu-Logo-Symbol.png',
-  '/assets/Ama-Tualu-Logo.png',
+  '/assets/st-mary-logo-symbol.png',
   '/assets/community-event-1.jpeg',
   '/assets/community-event-2.jpeg',
   '/assets/community-event-3.jpeg',

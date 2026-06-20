@@ -39,3 +39,4 @@ This website was built and is maintained by **EGABO AARON AT RENOA**.
   <p><b>Wisdom Is Wealth — Unlocking Life's Richest Treasures and Building Empires of Insight.</b></p>
   <p>&copy; AMA-TUALU FOUNDATION. All rights reserved.</p>
 </div>
+that it

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'st-marys-cache-v2';
+const CACHE_NAME = 'st-marys-cache-v3';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -6,6 +6,8 @@ const urlsToCache = [
   '/main.js',
   '/manifest.json',
   '/assets/st-mary-logo-symbol.png',
+  '/assets/parish-mass-1.png',
+  '/assets/parish-mass-2.png',
   '/assets/community-event-1.jpeg',
   '/assets/community-event-2.jpeg',
   '/assets/community-event-3.jpeg',

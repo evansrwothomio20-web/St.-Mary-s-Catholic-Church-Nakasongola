@@ -1,4 +1,4 @@
-const CACHE_NAME = 'st-marys-cache-v3';
+const CACHE_NAME = 'st-marys-cache-v6';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -10,9 +10,14 @@ const urlsToCache = [
   '/assets/parish-mass-2.png',
   '/assets/community-event-1.jpeg',
   '/assets/community-event-2.jpeg',
-  '/assets/community-event-3.jpeg',
   '/assets/community-event-4.jpeg',
-  '/assets/community-event-5.jpeg'
+  '/assets/community-event-5.jpeg',
+  '/assets/cement-donation.png',
+  '/assets/church-leaders.png',
+  '/assets/mass-celebration.png',
+  '/assets/church-congregation.png',
+  '/assets/pastoral-group.jpg',
+  '/assets/incomplete-fathers-house.png'
 ];
 
 // Install event: cache essential files and activate immediately

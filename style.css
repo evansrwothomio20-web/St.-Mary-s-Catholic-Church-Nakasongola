@@ -1067,7 +1067,7 @@ ul { list-style: none; }
 .gallery-card {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--clr-cream);
+  background: var(--clr-warm-white);
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition);
 }
@@ -1076,6 +1076,24 @@ ul { list-style: none; }
 .gallery-img { position: relative; height: 230px; overflow: hidden; }
 .gallery-img img { transition: transform 0.6s ease; }
 .gallery-card:hover .gallery-img img { transform: scale(1.06); }
+
+.gallery-info {
+  padding: 1.25rem;
+  background: var(--clr-warm-white);
+  border-top: 1px solid rgba(30, 53, 80, 0.06);
+  text-align: center;
+  transition: background-color var(--transition);
+}
+.gallery-title {
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--clr-forest);
+  transition: color var(--transition);
+}
+.gallery-card:hover .gallery-title {
+  color: var(--clr-earth);
+}
 
 /* ---------- MERCHANDISE ---------- */
 .merch-grid {

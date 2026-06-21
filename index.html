@@ -1083,7 +1083,7 @@ ul { list-style: none; }
 .gallery-card {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--clr-cream);
+  background: var(--clr-warm-white);
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition);
 }
@@ -1092,6 +1092,24 @@ ul { list-style: none; }
 .gallery-img { position: relative; height: 230px; overflow: hidden; }
 .gallery-img img { transition: transform 0.6s ease; }
 .gallery-card:hover .gallery-img img { transform: scale(1.06); }
+
+.gallery-info {
+  padding: 1.25rem;
+  background: var(--clr-warm-white);
+  border-top: 1px solid rgba(30, 53, 80, 0.06);
+  text-align: center;
+  transition: background-color var(--transition);
+}
+.gallery-title {
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--clr-forest);
+  transition: color var(--transition);
+}
+.gallery-card:hover .gallery-title {
+  color: var(--clr-earth);
+}
 
 /* ---------- MERCHANDISE ---------- */
 .merch-grid {
@@ -2248,23 +2266,59 @@ ul { list-style: none; }
         <p class="section-subtitle">A glimpse into the lives we are touching and the communities we are building.</p>
       </div>
       <div class="gallery-grid">
+        <!-- Cement donation -->
         <div class="gallery-card reveal-up" style="--delay: 0s">
-          <div class="gallery-img"></div>
+          <div class="gallery-img">
+            <img src="assets/cement-donation.png" alt="Cement donation" loading="lazy" />
+          </div>
+          <div class="gallery-info">
+            <h4 class="gallery-title">Cement donation</h4>
+          </div>
         </div>
+        <!-- Church leaders -->
         <div class="gallery-card reveal-up" style="--delay: 0.1s">
-          <div class="gallery-img"></div>
+          <div class="gallery-img">
+            <img src="assets/church-leaders.png" alt="Church leaders" loading="lazy" />
+          </div>
+          <div class="gallery-info">
+            <h4 class="gallery-title">Church leaders</h4>
+          </div>
         </div>
+        <!-- Mass Celebration -->
         <div class="gallery-card reveal-up" style="--delay: 0.2s">
-          <div class="gallery-img"></div>
+          <div class="gallery-img">
+            <img src="assets/mass-celebration.png" alt="Mass Celebration" loading="lazy" />
+          </div>
+          <div class="gallery-info">
+            <h4 class="gallery-title">Mass Celebration</h4>
+          </div>
         </div>
+        <!-- Church congregation -->
         <div class="gallery-card reveal-up" style="--delay: 0.3s">
-          <div class="gallery-img"></div>
+          <div class="gallery-img">
+            <img src="assets/church-congregation.png" alt="Church congregation" loading="lazy" />
+          </div>
+          <div class="gallery-info">
+            <h4 class="gallery-title">Church congregation</h4>
+          </div>
         </div>
+        <!-- Pastoral Group -->
         <div class="gallery-card reveal-up" style="--delay: 0.4s">
-          <div class="gallery-img"></div>
+          <div class="gallery-img">
+            <img src="assets/pastoral-group.jpg" alt="Pastoral Group" loading="lazy" />
+          </div>
+          <div class="gallery-info">
+            <h4 class="gallery-title">Pastoral Group</h4>
+          </div>
         </div>
+        <!-- Incomplete Father's House -->
         <div class="gallery-card reveal-up" style="--delay: 0.5s">
-          <div class="gallery-img"></div>
+          <div class="gallery-img">
+            <img src="assets/incomplete-fathers-house.png" alt="Incomplete Father's House" loading="lazy" />
+          </div>
+          <div class="gallery-info">
+            <h4 class="gallery-title">Incomplete Father's House</h4>
+          </div>
         </div>
       </div>
     </div>
@@ -2407,22 +2461,32 @@ ul { list-style: none; }
           <span class="partner-badge-light">Nakasongola</span>
           <span class="partner-badge-gold">Parish Fund</span>
         </div>
-        <p class="body-text">St Mary's Lake View Catholic Parish is embarking on key development and building projects to expand our main church building, support local outstation construction, and fund community initiatives like schooling support and clean water access.</p>
+        <p class="body-text">St Mary's Lake View Catholic Parish is embarking on key development and building projects, with our highest priority being the completion of the **Father's House (Parish Priest's Rectory)** to provide stable housing for our clergy, alongside expanding our main church building and supporting local outstations.</p>
         <div class="why-list">
           <h4 class="why-heading">Current Priority Projects:</h4>
+          <div class="why-item"><div class="why-dot"></div><span>Completing construction of the Father's House (Priest's Rectory)</span></div>
           <div class="why-item"><div class="why-dot"></div><span>Expanding the main parish church seating capacity</span></div>
           <div class="why-item"><div class="why-dot"></div><span>Renovating school facilities for local parish primary schools</span></div>
           <div class="why-item"><div class="why-dot"></div><span>Providing scholarships/school fees support for needy children</span></div>
-          <div class="why-item"><div class="why-dot"></div><span>Purchasing equipment for local outstation catechists</span></div>
         </div>
         <a href="#contact" class="btn-primary" style="margin-top: 2rem;">Support Projects <i class="fa-solid fa-arrow-right" style="font-size:0.8em;"></i></a>
       </div>
       <div class="partner-visual reveal-right">
         <div class="partner-img-frame">
-          <img src="assets/community-event-3.jpeg" alt="Parish Development" class="partner-photo" />
+          <img src="assets/incomplete-fathers-house.png" alt="Incomplete Father's House" class="partner-photo" />
           <div class="partner-img-overlay"></div>
+          <div class="partner-info-card">
+            <div class="card-row">
+              <div class="card-icon-wrap">
+                <i class="fa-solid fa-house-chimney icon-gold-sm"></i>
+              </div>
+              <div>
+                <h4 class="card-title">Father's House</h4>
+                <p class="card-meta">Current Active Project</p>
+              </div>
+            </div>
+          </div>
         </div>
-
       </div>
     </div>
   </section>
